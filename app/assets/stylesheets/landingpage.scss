@@ -1,0 +1,33 @@
+.main {
+  margin-top: 100px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 100px;
+  color: yellow;
+}
+
+a.btn.btn-lg.btn-default {
+  background-color: transparent;
+  color: yellow;
+  font-weight: 100;
+  margin-top: 20px;
+}
+
+a.btn.btn-lg.btn-default:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.contact {
+  margin-top: 120px;
+}
+
+.contact a {
+  color: white;
+  font-size: 20px;
+}
+
+.github-icon {
+  font-size: 50px;
+}
