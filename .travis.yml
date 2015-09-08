@@ -9,4 +9,4 @@ script:
 
 addons:
   code_climate:
-    repo_token: 3dfaa125a602cd85a63bad6ffe53cbf801553ff58f0516d78d200943647dce78 bundle exec rake
+    repo_token: ENV['CODECLIMATE_REPO_TOKEN'] bundle exec rake
