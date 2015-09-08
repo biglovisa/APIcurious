@@ -1,30 +1,16 @@
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container header">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <p class="navbar-brand">
-            Otherhub
-            </p>
-        </div>
+<!-- Page Content -->
+<div class="container main">
+<div class="row">
+    <div class="col-lg-12">
+        <h1>Otherhub</h1>
     </div>
-    <!-- /.container -->
-</nav>
-
-    <!-- Page Content -->
-    <div class="container main">
-    <div class="row">
-        <div class="col-lg-12">
-            <h1>Otherhub</h1>
-        </div>
-        <div class="login-button">
-            <%= link_to "Sign in with GitHub", "#" %>
-        </div>
+    <div class="login-button">
+        <%= link_to "Sign in with GitHub", "#", class: "btn btn-lg btn-default" %>
     </div>
 </div>
-<!-- /.container -->
+
+<div class="row contact">
+    <%= link_to "Repository", "http://github.com/applegrain/APIcurious" %>
+    <%= icon('github', class: "github-icon") %>
+    <%= link_to "Contact", "http://lovisa.io" %>
+</div>
