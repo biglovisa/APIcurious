@@ -7,8 +7,12 @@ RSpec.describe "Guest visits root page", type: :feature do
 
       expect(current_path).to eq root_path
 
+      within(".header") do
+        expect(page).to have_content "Otherhub"
+      end
+
       within(".main") do
-        expect(page).to have_content "Other Hub"
+        expect(page).to have_content "Otherhub"
         expect(page).to have_link "Sign in with GitHub"
       end
     end
