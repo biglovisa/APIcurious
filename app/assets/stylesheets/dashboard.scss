@@ -10,9 +10,10 @@
 
 .header-right {
   margin-top: 25px;
+  text-align: right;
 }
 
-a.latest-commit-link:hover {
+a.header-right-links:hover {
   color: yellow;
   text-decoration: none;
 }
