@@ -4,7 +4,7 @@ RSpec.describe "the GitHub API", type: :request do
   it "returns all commits by a user" do
     VCR.use_cassette("user_commits") do
       service = GithubService.new.find_commits(user)
-      expect(service.count).to eq 3
+      expect(service.count).to eq 80
     end
   end
 

@@ -15,10 +15,11 @@ RSpec.describe "User logs in", type: :feature do
       login_user
 
       click_link "Sign in with GitHub"
-
       within(".dashboard-main") do
         click_link "Sign Out"
       end
+
+      expect(current_path).to eq root_path
     end
   end
 end

@@ -28,14 +28,14 @@ RSpec.configure do |config|
   def login_user
     OmniAuth.config.test_mode = true
 
-    OmniAuth.config.mock_auth[:github] = {
+    OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new ({
       'provider' => user.provider,
       'uid'      => user.uid,
       'token'    => user.token,
       'info'     =>  {email: user.email,
                       nickname: user.nickname,
                       image_url: user.image_url}
-    }
+    })
   end
 
   if ENV["CI"]
