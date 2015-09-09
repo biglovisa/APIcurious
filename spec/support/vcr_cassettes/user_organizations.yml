@@ -1,0 +1,74 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.github.com/users/user/orgs
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      user-agent:
+      - Hurley v0.2
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - GitHub.com
+      date:
+      - Wed, 09 Sep 2015 19:26:03 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '2'
+      connection:
+      - close
+      status:
+      - 200 OK
+      x-ratelimit-limit:
+      - '60'
+      x-ratelimit-remaining:
+      - '31'
+      x-ratelimit-reset:
+      - '1441829062'
+      cache-control:
+      - public, max-age=60, s-maxage=60
+      etag:
+      - '"98f0c1b396a4e5d54f4d5fe561d54b44"'
+      vary:
+      - Accept
+      - Accept-Encoding
+      x-github-media-type:
+      - github.v3
+      x-xss-protection:
+      - 1; mode=block
+      x-frame-options:
+      - deny
+      content-security-policy:
+      - default-src 'none'
+      access-control-allow-credentials:
+      - 'true'
+      access-control-expose-headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      access-control-allow-origin:
+      - "*"
+      x-github-request-id:
+      - 4999852B:19DB:A2A4848:55F087CB
+      strict-transport-security:
+      - max-age=31536000; includeSubdomains; preload
+      x-content-type-options:
+      - nosniff
+      x-served-by:
+      - 2d7a5e35115884240089368322196939
+    body:
+      encoding: UTF-8
+      string: "[]"
+    http_version: '1.1'
+  recorded_at: Wed, 09 Sep 2015 19:26:03 GMT
+recorded_with: VCR 2.9.3
