@@ -1,15 +1,14 @@
 <div class="row">
   <div class="col-lg-12 dashboard-main">
-    <%= image_tag 'exercism.png', class: "img-circle img-thumbnail home-image" %>
+    <%= image_tag current_user.image_url, class: "img-circle img-thumbnail home-image" %>
 
-    <div class="latest-commit pull-right">
+    <div class="header-right pull-right">
+      <%= link_to "Sign Out", logout_path %>
       <%= link_to "latest commit", "#", class: "latest-commit-link" %>
       <p>my latest commit was such a great one</p>
     </div>
 
-    <h1 class="page-header">user
-      <small>otherhub</small>
-    </h1>
+    <h1 class="page-header"><%= current_user.nickname %></h1>
   </div>
 </div>
 

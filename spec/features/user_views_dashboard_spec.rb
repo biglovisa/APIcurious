@@ -12,7 +12,6 @@ RSpec.describe "User visits the dashboard" do
       expect(current_path).to eq dashboard_path
 
       within(".dashboard-main") do
-        expect(page).to have_content user.nickname
         expect(page).to have_link "latest commit"
       end
     end
