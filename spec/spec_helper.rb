@@ -1,3 +1,12 @@
+require "vcr"
+
+VCR.configure do |c|
+    c.hook_into                 :fakeweb
+    c.cassette_library_dir      = 'spec/support/vcr_cassettes'
+    c.configure_rspec_metadata!
+    c.default_cassette_options  = {:record => :new_episodes}
+end
+
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
@@ -8,7 +17,7 @@ RSpec.configure do |config|
   end
 
   def user
-    @user ||= User.create(provider: 'github',
+    @user ||= User.new(provider: 'github',
                           uid: '12345',
                           email: 'user@email.com',
                           nickname: 'user',
@@ -22,10 +31,10 @@ RSpec.configure do |config|
     OmniAuth.config.mock_auth[:github] = {
       'provider' => user.provider,
       'uid'      => user.uid,
+      'token'    => user.token,
       'info'     =>  {email: user.email,
                       nickname: user.nickname,
-                      image_url: user.image_url,
-                      token: user.token}
+                      image_url: user.image_url}
     }
   end
 
