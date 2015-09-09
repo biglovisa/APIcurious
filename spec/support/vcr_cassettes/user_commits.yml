@@ -7,256 +7,71 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      user-agent:
+      User-Agent:
       - Hurley v0.2
-      accept-encoding:
+      Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      accept:
+      Accept:
       - "*/*"
   response:
     status:
       code: 200
       message: OK
     headers:
-      server:
+      Server:
       - GitHub.com
-      date:
-      - Wed, 09 Sep 2015 19:31:42 GMT
-      content-type:
+      Date:
+      - Wed, 09 Sep 2015 21:59:08 GMT
+      Content-Type:
       - application/json; charset=utf-8
-      transfer-encoding:
+      Transfer-Encoding:
       - chunked
-      connection:
-      - close
-      status:
+      Status:
       - 200 OK
-      x-ratelimit-limit:
+      X-Ratelimit-Limit:
       - '60'
-      x-ratelimit-remaining:
-      - '28'
-      x-ratelimit-reset:
-      - '1441829062'
-      cache-control:
+      X-Ratelimit-Remaining:
+      - '15'
+      X-Ratelimit-Reset:
+      - '1441836446'
+      Cache-Control:
       - public, max-age=60, s-maxage=60
-      etag:
+      Etag:
       - W/"aa862436b59327c84a6cd355192e95b0"
-      vary:
+      Vary:
       - Accept
       - Accept-Encoding
-      x-github-media-type:
+      X-Github-Media-Type:
       - github.v3
-      x-xss-protection:
+      X-Xss-Protection:
       - 1; mode=block
-      x-frame-options:
+      X-Frame-Options:
       - deny
-      content-security-policy:
+      Content-Security-Policy:
       - default-src 'none'
-      access-control-allow-credentials:
+      Access-Control-Allow-Credentials:
       - 'true'
-      access-control-expose-headers:
+      Access-Control-Expose-Headers:
       - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
         X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
-      access-control-allow-origin:
+      Access-Control-Allow-Origin:
       - "*"
-      x-github-request-id:
-      - 4999852B:19D2:164F3B4:55F0891E
-      strict-transport-security:
+      X-Github-Request-Id:
+      - 4999852B:19DB:A4F1D90:55F0ABAC
+      Strict-Transport-Security:
       - max-age=31536000; includeSubdomains; preload
-      x-content-type-options:
+      X-Content-Type-Options:
       - nosniff
-      x-served-by:
-      - a30e6f9aa7cf5731b87dfb3b9992202d
-      content-encoding:
-      - gzip
+      X-Served-By:
+      - 07ff1c8a09e44b62e277fae50a1b1dc4
     body:
       encoding: ASCII-8BIT
       string: '[{"id":6892125,"name":"configs","full_name":"user/configs","owner":{"login":"user","id":14959,"avatar_url":"https://avatars.githubusercontent.com/u/14959?v=3","gravatar_id":"","url":"https://api.github.com/users/user","html_url":"https://github.com/user","followers_url":"https://api.github.com/users/user/followers","following_url":"https://api.github.com/users/user/following{/other_user}","gists_url":"https://api.github.com/users/user/gists{/gist_id}","starred_url":"https://api.github.com/users/user/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/user/subscriptions","organizations_url":"https://api.github.com/users/user/orgs","repos_url":"https://api.github.com/users/user/repos","events_url":"https://api.github.com/users/user/events{/privacy}","received_events_url":"https://api.github.com/users/user/received_events","type":"User","site_admin":false},"private":false,"html_url":"https://github.com/user/configs","description":"My
         stuff","fork":false,"url":"https://api.github.com/repos/user/configs","forks_url":"https://api.github.com/repos/user/configs/forks","keys_url":"https://api.github.com/repos/user/configs/keys{/key_id}","collaborators_url":"https://api.github.com/repos/user/configs/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/user/configs/teams","hooks_url":"https://api.github.com/repos/user/configs/hooks","issue_events_url":"https://api.github.com/repos/user/configs/issues/events{/number}","events_url":"https://api.github.com/repos/user/configs/events","assignees_url":"https://api.github.com/repos/user/configs/assignees{/user}","branches_url":"https://api.github.com/repos/user/configs/branches{/branch}","tags_url":"https://api.github.com/repos/user/configs/tags","blobs_url":"https://api.github.com/repos/user/configs/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/user/configs/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/user/configs/git/refs{/sha}","trees_url":"https://api.github.com/repos/user/configs/git/trees{/sha}","statuses_url":"https://api.github.com/repos/user/configs/statuses/{sha}","languages_url":"https://api.github.com/repos/user/configs/languages","stargazers_url":"https://api.github.com/repos/user/configs/stargazers","contributors_url":"https://api.github.com/repos/user/configs/contributors","subscribers_url":"https://api.github.com/repos/user/configs/subscribers","subscription_url":"https://api.github.com/repos/user/configs/subscription","commits_url":"https://api.github.com/repos/user/configs/commits{/sha}","git_commits_url":"https://api.github.com/repos/user/configs/git/commits{/sha}","comments_url":"https://api.github.com/repos/user/configs/comments{/number}","issue_comment_url":"https://api.github.com/repos/user/configs/issues/comments{/number}","contents_url":"https://api.github.com/repos/user/configs/contents/{+path}","compare_url":"https://api.github.com/repos/user/configs/compare/{base}...{head}","merges_url":"https://api.github.com/repos/user/configs/merges","archive_url":"https://api.github.com/repos/user/configs/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/user/configs/downloads","issues_url":"https://api.github.com/repos/user/configs/issues{/number}","pulls_url":"https://api.github.com/repos/user/configs/pulls{/number}","milestones_url":"https://api.github.com/repos/user/configs/milestones{/number}","notifications_url":"https://api.github.com/repos/user/configs/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/user/configs/labels{/name}","releases_url":"https://api.github.com/repos/user/configs/releases{/id}","created_at":"2012-11-27T22:27:12Z","updated_at":"2015-05-08T19:58:34Z","pushed_at":"2015-09-08T21:11:48Z","git_url":"git://github.com/user/configs.git","ssh_url":"git@github.com:user/configs.git","clone_url":"https://github.com/user/configs.git","svn_url":"https://github.com/user/configs","homepage":null,"size":409,"stargazers_count":2,"watchers_count":2,"language":"Shell","has_issues":true,"has_downloads":true,"has_wiki":true,"has_pages":false,"forks_count":0,"mirror_url":null,"open_issues_count":0,"forks":0,"open_issues":0,"watchers":2,"default_branch":"master"},{"id":6783187,"name":"dwm","full_name":"user/dwm","owner":{"login":"user","id":14959,"avatar_url":"https://avatars.githubusercontent.com/u/14959?v=3","gravatar_id":"","url":"https://api.github.com/users/user","html_url":"https://github.com/user","followers_url":"https://api.github.com/users/user/followers","following_url":"https://api.github.com/users/user/following{/other_user}","gists_url":"https://api.github.com/users/user/gists{/gist_id}","starred_url":"https://api.github.com/users/user/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/user/subscriptions","organizations_url":"https://api.github.com/users/user/orgs","repos_url":"https://api.github.com/users/user/repos","events_url":"https://api.github.com/users/user/events{/privacy}","received_events_url":"https://api.github.com/users/user/received_events","type":"User","site_admin":false},"private":false,"html_url":"https://github.com/user/dwm","description":"My
         dwm setup, tip w/ some patches","fork":false,"url":"https://api.github.com/repos/user/dwm","forks_url":"https://api.github.com/repos/user/dwm/forks","keys_url":"https://api.github.com/repos/user/dwm/keys{/key_id}","collaborators_url":"https://api.github.com/repos/user/dwm/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/user/dwm/teams","hooks_url":"https://api.github.com/repos/user/dwm/hooks","issue_events_url":"https://api.github.com/repos/user/dwm/issues/events{/number}","events_url":"https://api.github.com/repos/user/dwm/events","assignees_url":"https://api.github.com/repos/user/dwm/assignees{/user}","branches_url":"https://api.github.com/repos/user/dwm/branches{/branch}","tags_url":"https://api.github.com/repos/user/dwm/tags","blobs_url":"https://api.github.com/repos/user/dwm/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/user/dwm/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/user/dwm/git/refs{/sha}","trees_url":"https://api.github.com/repos/user/dwm/git/trees{/sha}","statuses_url":"https://api.github.com/repos/user/dwm/statuses/{sha}","languages_url":"https://api.github.com/repos/user/dwm/languages","stargazers_url":"https://api.github.com/repos/user/dwm/stargazers","contributors_url":"https://api.github.com/repos/user/dwm/contributors","subscribers_url":"https://api.github.com/repos/user/dwm/subscribers","subscription_url":"https://api.github.com/repos/user/dwm/subscription","commits_url":"https://api.github.com/repos/user/dwm/commits{/sha}","git_commits_url":"https://api.github.com/repos/user/dwm/git/commits{/sha}","comments_url":"https://api.github.com/repos/user/dwm/comments{/number}","issue_comment_url":"https://api.github.com/repos/user/dwm/issues/comments{/number}","contents_url":"https://api.github.com/repos/user/dwm/contents/{+path}","compare_url":"https://api.github.com/repos/user/dwm/compare/{base}...{head}","merges_url":"https://api.github.com/repos/user/dwm/merges","archive_url":"https://api.github.com/repos/user/dwm/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/user/dwm/downloads","issues_url":"https://api.github.com/repos/user/dwm/issues{/number}","pulls_url":"https://api.github.com/repos/user/dwm/pulls{/number}","milestones_url":"https://api.github.com/repos/user/dwm/milestones{/number}","notifications_url":"https://api.github.com/repos/user/dwm/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/user/dwm/labels{/name}","releases_url":"https://api.github.com/repos/user/dwm/releases{/id}","created_at":"2012-11-20T18:49:10Z","updated_at":"2015-05-02T06:09:32Z","pushed_at":"2015-05-13T10:58:04Z","git_url":"git://github.com/user/dwm.git","ssh_url":"git@github.com:user/dwm.git","clone_url":"https://github.com/user/dwm.git","svn_url":"https://github.com/user/dwm","homepage":"","size":380,"stargazers_count":3,"watchers_count":3,"language":"C","has_issues":true,"has_downloads":true,"has_wiki":true,"has_pages":false,"forks_count":0,"mirror_url":null,"open_issues_count":0,"forks":0,"open_issues":0,"watchers":3,"default_branch":"master"},{"id":6833012,"name":"st","full_name":"user/st","owner":{"login":"user","id":14959,"avatar_url":"https://avatars.githubusercontent.com/u/14959?v=3","gravatar_id":"","url":"https://api.github.com/users/user","html_url":"https://github.com/user","followers_url":"https://api.github.com/users/user/followers","following_url":"https://api.github.com/users/user/following{/other_user}","gists_url":"https://api.github.com/users/user/gists{/gist_id}","starred_url":"https://api.github.com/users/user/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/user/subscriptions","organizations_url":"https://api.github.com/users/user/orgs","repos_url":"https://api.github.com/users/user/repos","events_url":"https://api.github.com/users/user/events{/privacy}","received_events_url":"https://api.github.com/users/user/received_events","type":"User","site_admin":false},"private":false,"html_url":"https://github.com/user/st","description":"simple
         terminal, tip","fork":false,"url":"https://api.github.com/repos/user/st","forks_url":"https://api.github.com/repos/user/st/forks","keys_url":"https://api.github.com/repos/user/st/keys{/key_id}","collaborators_url":"https://api.github.com/repos/user/st/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/user/st/teams","hooks_url":"https://api.github.com/repos/user/st/hooks","issue_events_url":"https://api.github.com/repos/user/st/issues/events{/number}","events_url":"https://api.github.com/repos/user/st/events","assignees_url":"https://api.github.com/repos/user/st/assignees{/user}","branches_url":"https://api.github.com/repos/user/st/branches{/branch}","tags_url":"https://api.github.com/repos/user/st/tags","blobs_url":"https://api.github.com/repos/user/st/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/user/st/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/user/st/git/refs{/sha}","trees_url":"https://api.github.com/repos/user/st/git/trees{/sha}","statuses_url":"https://api.github.com/repos/user/st/statuses/{sha}","languages_url":"https://api.github.com/repos/user/st/languages","stargazers_url":"https://api.github.com/repos/user/st/stargazers","contributors_url":"https://api.github.com/repos/user/st/contributors","subscribers_url":"https://api.github.com/repos/user/st/subscribers","subscription_url":"https://api.github.com/repos/user/st/subscription","commits_url":"https://api.github.com/repos/user/st/commits{/sha}","git_commits_url":"https://api.github.com/repos/user/st/git/commits{/sha}","comments_url":"https://api.github.com/repos/user/st/comments{/number}","issue_comment_url":"https://api.github.com/repos/user/st/issues/comments{/number}","contents_url":"https://api.github.com/repos/user/st/contents/{+path}","compare_url":"https://api.github.com/repos/user/st/compare/{base}...{head}","merges_url":"https://api.github.com/repos/user/st/merges","archive_url":"https://api.github.com/repos/user/st/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/user/st/downloads","issues_url":"https://api.github.com/repos/user/st/issues{/number}","pulls_url":"https://api.github.com/repos/user/st/pulls{/number}","milestones_url":"https://api.github.com/repos/user/st/milestones{/number}","notifications_url":"https://api.github.com/repos/user/st/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/user/st/labels{/name}","releases_url":"https://api.github.com/repos/user/st/releases{/id}","created_at":"2012-11-23T20:54:36Z","updated_at":"2015-04-28T03:58:56Z","pushed_at":"2015-08-27T19:51:27Z","git_url":"git://github.com/user/st.git","ssh_url":"git@github.com:user/st.git","clone_url":"https://github.com/user/st.git","svn_url":"https://github.com/user/st","homepage":"","size":259,"stargazers_count":1,"watchers_count":1,"language":"C","has_issues":false,"has_downloads":true,"has_wiki":false,"has_pages":false,"forks_count":1,"mirror_url":null,"open_issues_count":1,"forks":1,"open_issues":1,"watchers":1,"default_branch":"master"}]'
-    http_version: '1.1'
-  recorded_at: Wed, 09 Sep 2015 19:31:42 GMT
-- request:
-    method: get
-    uri: https://api.github.com/repos/user/configs/git/commits
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      user-agent:
-      - Hurley v0.2
-      accept-encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      accept:
-      - "*/*"
-  response:
-    status:
-      code: 404
-      message: Not Found
-    headers:
-      server:
-      - GitHub.com
-      date:
-      - Wed, 09 Sep 2015 19:32:02 GMT
-      content-type:
-      - application/json; charset=utf-8
-      transfer-encoding:
-      - chunked
-      connection:
-      - close
-      status:
-      - 404 Not Found
-      x-ratelimit-limit:
-      - '60'
-      x-ratelimit-remaining:
-      - '27'
-      x-ratelimit-reset:
-      - '1441829062'
-      x-github-media-type:
-      - github.v3
-      x-xss-protection:
-      - 1; mode=block
-      x-frame-options:
-      - deny
-      content-security-policy:
-      - default-src 'none'
-      access-control-allow-credentials:
-      - 'true'
-      access-control-expose-headers:
-      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
-        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
-      access-control-allow-origin:
-      - "*"
-      x-github-request-id:
-      - 4999852B:1A01:9A25D35:55F08932
-      strict-transport-security:
-      - max-age=31536000; includeSubdomains; preload
-      x-content-type-options:
-      - nosniff
-      content-encoding:
-      - gzip
-    body:
-      encoding: ASCII-8BIT
-      string: '{"message":"Not Found","documentation_url":"https://developer.github.com/v3"}'
-    http_version: '1.1'
-  recorded_at: Wed, 09 Sep 2015 19:32:02 GMT
-- request:
-    method: get
-    uri: https://api.github.com/repos/applegrain/1507-workshop/commits
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      user-agent:
-      - Hurley v0.2
-      accept-encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      server:
-      - GitHub.com
-      date:
-      - Wed, 09 Sep 2015 19:32:30 GMT
-      content-type:
-      - application/json; charset=utf-8
-      transfer-encoding:
-      - chunked
-      connection:
-      - close
-      status:
-      - 200 OK
-      x-ratelimit-limit:
-      - '60'
-      x-ratelimit-remaining:
-      - '26'
-      x-ratelimit-reset:
-      - '1441829062'
-      cache-control:
-      - public, max-age=60, s-maxage=60
-      last-modified:
-      - Thu, 02 Jul 2015 19:36:03 GMT
-      etag:
-      - W/"ac4cdbdab535a66c163122c98cbb14e0"
-      vary:
-      - Accept
-      - Accept-Encoding
-      x-github-media-type:
-      - github.v3
-      x-xss-protection:
-      - 1; mode=block
-      x-frame-options:
-      - deny
-      content-security-policy:
-      - default-src 'none'
-      access-control-allow-credentials:
-      - 'true'
-      access-control-expose-headers:
-      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
-        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
-      access-control-allow-origin:
-      - "*"
-      x-github-request-id:
-      - 4999852B:1647:858CE65:55F0894E
-      strict-transport-security:
-      - max-age=31536000; includeSubdomains; preload
-      x-content-type-options:
-      - nosniff
-      x-served-by:
-      - a6882e5cd2513376cb9481dbcd83f3a2
-      content-encoding:
-      - gzip
-    body:
-      encoding: ASCII-8BIT
-      string: '[{"sha":"f44a008006600df907007fe93a5342eaaeb11b67","commit":{"author":{"name":"Lovisa
-        Svallingson","email":"applegrain@users.noreply.github.com","date":"2015-07-02T19:36:03Z"},"committer":{"name":"Lovisa
-        Svallingson","email":"applegrain@users.noreply.github.com","date":"2015-07-02T19:36:03Z"},"message":"Update
-        outline.md","tree":{"sha":"47a38b3a5b2de699e4ee4fee54f97f4829e85d4b","url":"https://api.github.com/repos/applegrain/1507-workshop/git/trees/47a38b3a5b2de699e4ee4fee54f97f4829e85d4b"},"url":"https://api.github.com/repos/applegrain/1507-workshop/git/commits/f44a008006600df907007fe93a5342eaaeb11b67","comment_count":0},"url":"https://api.github.com/repos/applegrain/1507-workshop/commits/f44a008006600df907007fe93a5342eaaeb11b67","html_url":"https://github.com/applegrain/1507-workshop/commit/f44a008006600df907007fe93a5342eaaeb11b67","comments_url":"https://api.github.com/repos/applegrain/1507-workshop/commits/f44a008006600df907007fe93a5342eaaeb11b67/comments","author":{"login":"applegrain","id":10555255,"avatar_url":"https://avatars.githubusercontent.com/u/10555255?v=3","gravatar_id":"","url":"https://api.github.com/users/applegrain","html_url":"https://github.com/applegrain","followers_url":"https://api.github.com/users/applegrain/followers","following_url":"https://api.github.com/users/applegrain/following{/other_user}","gists_url":"https://api.github.com/users/applegrain/gists{/gist_id}","starred_url":"https://api.github.com/users/applegrain/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/applegrain/subscriptions","organizations_url":"https://api.github.com/users/applegrain/orgs","repos_url":"https://api.github.com/users/applegrain/repos","events_url":"https://api.github.com/users/applegrain/events{/privacy}","received_events_url":"https://api.github.com/users/applegrain/received_events","type":"User","site_admin":false},"committer":{"login":"applegrain","id":10555255,"avatar_url":"https://avatars.githubusercontent.com/u/10555255?v=3","gravatar_id":"","url":"https://api.github.com/users/applegrain","html_url":"https://github.com/applegrain","followers_url":"https://api.github.com/users/applegrain/followers","following_url":"https://api.github.com/users/applegrain/following{/other_user}","gists_url":"https://api.github.com/users/applegrain/gists{/gist_id}","starred_url":"https://api.github.com/users/applegrain/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/applegrain/subscriptions","organizations_url":"https://api.github.com/users/applegrain/orgs","repos_url":"https://api.github.com/users/applegrain/repos","events_url":"https://api.github.com/users/applegrain/events{/privacy}","received_events_url":"https://api.github.com/users/applegrain/received_events","type":"User","site_admin":false},"parents":[{"sha":"80994321f0259cc5ec466526d1ef4aac57ba968c","url":"https://api.github.com/repos/applegrain/1507-workshop/commits/80994321f0259cc5ec466526d1ef4aac57ba968c","html_url":"https://github.com/applegrain/1507-workshop/commit/80994321f0259cc5ec466526d1ef4aac57ba968c"}]},{"sha":"80994321f0259cc5ec466526d1ef4aac57ba968c","commit":{"author":{"name":"Lovisa
-        Svallingson","email":"applegrain@users.noreply.github.com","date":"2015-07-02T19:34:06Z"},"committer":{"name":"Lovisa
-        Svallingson","email":"applegrain@users.noreply.github.com","date":"2015-07-02T19:34:06Z"},"message":"add
-        Friday","tree":{"sha":"14bd1415e02af3648c353527ef969155eb25abc3","url":"https://api.github.com/repos/applegrain/1507-workshop/git/trees/14bd1415e02af3648c353527ef969155eb25abc3"},"url":"https://api.github.com/repos/applegrain/1507-workshop/git/commits/80994321f0259cc5ec466526d1ef4aac57ba968c","comment_count":0},"url":"https://api.github.com/repos/applegrain/1507-workshop/commits/80994321f0259cc5ec466526d1ef4aac57ba968c","html_url":"https://github.com/applegrain/1507-workshop/commit/80994321f0259cc5ec466526d1ef4aac57ba968c","comments_url":"https://api.github.com/repos/applegrain/1507-workshop/commits/80994321f0259cc5ec466526d1ef4aac57ba968c/comments","author":{"login":"applegrain","id":10555255,"avatar_url":"https://avatars.githubusercontent.com/u/10555255?v=3","gravatar_id":"","url":"https://api.github.com/users/applegrain","html_url":"https://github.com/applegrain","followers_url":"https://api.github.com/users/applegrain/followers","following_url":"https://api.github.com/users/applegrain/following{/other_user}","gists_url":"https://api.github.com/users/applegrain/gists{/gist_id}","starred_url":"https://api.github.com/users/applegrain/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/applegrain/subscriptions","organizations_url":"https://api.github.com/users/applegrain/orgs","repos_url":"https://api.github.com/users/applegrain/repos","events_url":"https://api.github.com/users/applegrain/events{/privacy}","received_events_url":"https://api.github.com/users/applegrain/received_events","type":"User","site_admin":false},"committer":{"login":"applegrain","id":10555255,"avatar_url":"https://avatars.githubusercontent.com/u/10555255?v=3","gravatar_id":"","url":"https://api.github.com/users/applegrain","html_url":"https://github.com/applegrain","followers_url":"https://api.github.com/users/applegrain/followers","following_url":"https://api.github.com/users/applegrain/following{/other_user}","gists_url":"https://api.github.com/users/applegrain/gists{/gist_id}","starred_url":"https://api.github.com/users/applegrain/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/applegrain/subscriptions","organizations_url":"https://api.github.com/users/applegrain/orgs","repos_url":"https://api.github.com/users/applegrain/repos","events_url":"https://api.github.com/users/applegrain/events{/privacy}","received_events_url":"https://api.github.com/users/applegrain/received_events","type":"User","site_admin":false},"parents":[{"sha":"6f4595d98c0ef938ee6c4539a02c79f1bf4572d3","url":"https://api.github.com/repos/applegrain/1507-workshop/commits/6f4595d98c0ef938ee6c4539a02c79f1bf4572d3","html_url":"https://github.com/applegrain/1507-workshop/commit/6f4595d98c0ef938ee6c4539a02c79f1bf4572d3"}]},{"sha":"6f4595d98c0ef938ee6c4539a02c79f1bf4572d3","commit":{"author":{"name":"Lovisa
-        Svallingson","email":"applegrain@users.noreply.github.com","date":"2015-07-02T14:31:19Z"},"committer":{"name":"Lovisa
-        Svallingson","email":"applegrain@users.noreply.github.com","date":"2015-07-02T14:31:19Z"},"message":"add
-        git link","tree":{"sha":"26c93c6af50dff2313e614356a637f23564050de","url":"https://api.github.com/repos/applegrain/1507-workshop/git/trees/26c93c6af50dff2313e614356a637f23564050de"},"url":"https://api.github.com/repos/applegrain/1507-workshop/git/commits/6f4595d98c0ef938ee6c4539a02c79f1bf4572d3","comment_count":0},"url":"https://api.github.com/repos/applegrain/1507-workshop/commits/6f4595d98c0ef938ee6c4539a02c79f1bf4572d3","html_url":"https://github.com/applegrain/1507-workshop/commit/6f4595d98c0ef938ee6c4539a02c79f1bf4572d3","comments_url":"https://api.github.com/repos/applegrain/1507-workshop/commits/6f4595d98c0ef938ee6c4539a02c79f1bf4572d3/comments","author":{"login":"applegrain","id":10555255,"avatar_url":"https://avatars.githubusercontent.com/u/10555255?v=3","gravatar_id":"","url":"https://api.github.com/users/applegrain","html_url":"https://github.com/applegrain","followers_url":"https://api.github.com/users/applegrain/followers","following_url":"https://api.github.com/users/applegrain/following{/other_user}","gists_url":"https://api.github.com/users/applegrain/gists{/gist_id}","starred_url":"https://api.github.com/users/applegrain/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/applegrain/subscriptions","organizations_url":"https://api.github.com/users/applegrain/orgs","repos_url":"https://api.github.com/users/applegrain/repos","events_url":"https://api.github.com/users/applegrain/events{/privacy}","received_events_url":"https://api.github.com/users/applegrain/received_events","type":"User","site_admin":false},"committer":{"login":"applegrain","id":10555255,"avatar_url":"https://avatars.githubusercontent.com/u/10555255?v=3","gravatar_id":"","url":"https://api.github.com/users/applegrain","html_url":"https://github.com/applegrain","followers_url":"https://api.github.com/users/applegrain/followers","following_url":"https://api.github.com/users/applegrain/following{/other_user}","gists_url":"https://api.github.com/users/applegrain/gists{/gist_id}","starred_url":"https://api.github.com/users/applegrain/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/applegrain/subscriptions","organizations_url":"https://api.github.com/users/applegrain/orgs","repos_url":"https://api.github.com/users/applegrain/repos","events_url":"https://api.github.com/users/applegrain/events{/privacy}","received_events_url":"https://api.github.com/users/applegrain/received_events","type":"User","site_admin":false},"parents":[{"sha":"0df302410247e86285dbaad4021d27dce431f7e9","url":"https://api.github.com/repos/applegrain/1507-workshop/commits/0df302410247e86285dbaad4021d27dce431f7e9","html_url":"https://github.com/applegrain/1507-workshop/commit/0df302410247e86285dbaad4021d27dce431f7e9"}]},{"sha":"0df302410247e86285dbaad4021d27dce431f7e9","commit":{"author":{"name":"Lovisa
-        Svallingson","email":"applegrain@users.noreply.github.com","date":"2015-06-28T23:20:56Z"},"committer":{"name":"Lovisa
-        Svallingson","email":"applegrain@users.noreply.github.com","date":"2015-06-28T23:20:56Z"},"message":"update
-        editors+add Josh''s shell exercises","tree":{"sha":"34608facebe60cbe81dd092e68b69d1d1781d015","url":"https://api.github.com/repos/applegrain/1507-workshop/git/trees/34608facebe60cbe81dd092e68b69d1d1781d015"},"url":"https://api.github.com/repos/applegrain/1507-workshop/git/commits/0df302410247e86285dbaad4021d27dce431f7e9","comment_count":0},"url":"https://api.github.com/repos/applegrain/1507-workshop/commits/0df302410247e86285dbaad4021d27dce431f7e9","html_url":"https://github.com/applegrain/1507-workshop/commit/0df302410247e86285dbaad4021d27dce431f7e9","comments_url":"https://api.github.com/repos/applegrain/1507-workshop/commits/0df302410247e86285dbaad4021d27dce431f7e9/comments","author":{"login":"applegrain","id":10555255,"avatar_url":"https://avatars.githubusercontent.com/u/10555255?v=3","gravatar_id":"","url":"https://api.github.com/users/applegrain","html_url":"https://github.com/applegrain","followers_url":"https://api.github.com/users/applegrain/followers","following_url":"https://api.github.com/users/applegrain/following{/other_user}","gists_url":"https://api.github.com/users/applegrain/gists{/gist_id}","starred_url":"https://api.github.com/users/applegrain/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/applegrain/subscriptions","organizations_url":"https://api.github.com/users/applegrain/orgs","repos_url":"https://api.github.com/users/applegrain/repos","events_url":"https://api.github.com/users/applegrain/events{/privacy}","received_events_url":"https://api.github.com/users/applegrain/received_events","type":"User","site_admin":false},"committer":{"login":"applegrain","id":10555255,"avatar_url":"https://avatars.githubusercontent.com/u/10555255?v=3","gravatar_id":"","url":"https://api.github.com/users/applegrain","html_url":"https://github.com/applegrain","followers_url":"https://api.github.com/users/applegrain/followers","following_url":"https://api.github.com/users/applegrain/following{/other_user}","gists_url":"https://api.github.com/users/applegrain/gists{/gist_id}","starred_url":"https://api.github.com/users/applegrain/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/applegrain/subscriptions","organizations_url":"https://api.github.com/users/applegrain/orgs","repos_url":"https://api.github.com/users/applegrain/repos","events_url":"https://api.github.com/users/applegrain/events{/privacy}","received_events_url":"https://api.github.com/users/applegrain/received_events","type":"User","site_admin":false},"parents":[{"sha":"38e3730e4ebda20b292f3e59a0685a4f0bd9c368","url":"https://api.github.com/repos/applegrain/1507-workshop/commits/38e3730e4ebda20b292f3e59a0685a4f0bd9c368","html_url":"https://github.com/applegrain/1507-workshop/commit/38e3730e4ebda20b292f3e59a0685a4f0bd9c368"}]},{"sha":"38e3730e4ebda20b292f3e59a0685a4f0bd9c368","commit":{"author":{"name":"Lovisa
-        Svallingson","email":"applegrain@users.noreply.github.com","date":"2015-06-27T16:09:04Z"},"committer":{"name":"Lovisa
-        Svallingson","email":"applegrain@users.noreply.github.com","date":"2015-06-27T16:09:04Z"},"message":"Update
-        outline.md","tree":{"sha":"b560da6ee724ba6385e8b048c0042310e9285708","url":"https://api.github.com/repos/applegrain/1507-workshop/git/trees/b560da6ee724ba6385e8b048c0042310e9285708"},"url":"https://api.github.com/repos/applegrain/1507-workshop/git/commits/38e3730e4ebda20b292f3e59a0685a4f0bd9c368","comment_count":0},"url":"https://api.github.com/repos/applegrain/1507-workshop/commits/38e3730e4ebda20b292f3e59a0685a4f0bd9c368","html_url":"https://github.com/applegrain/1507-workshop/commit/38e3730e4ebda20b292f3e59a0685a4f0bd9c368","comments_url":"https://api.github.com/repos/applegrain/1507-workshop/commits/38e3730e4ebda20b292f3e59a0685a4f0bd9c368/comments","author":{"login":"applegrain","id":10555255,"avatar_url":"https://avatars.githubusercontent.com/u/10555255?v=3","gravatar_id":"","url":"https://api.github.com/users/applegrain","html_url":"https://github.com/applegrain","followers_url":"https://api.github.com/users/applegrain/followers","following_url":"https://api.github.com/users/applegrain/following{/other_user}","gists_url":"https://api.github.com/users/applegrain/gists{/gist_id}","starred_url":"https://api.github.com/users/applegrain/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/applegrain/subscriptions","organizations_url":"https://api.github.com/users/applegrain/orgs","repos_url":"https://api.github.com/users/applegrain/repos","events_url":"https://api.github.com/users/applegrain/events{/privacy}","received_events_url":"https://api.github.com/users/applegrain/received_events","type":"User","site_admin":false},"committer":{"login":"applegrain","id":10555255,"avatar_url":"https://avatars.githubusercontent.com/u/10555255?v=3","gravatar_id":"","url":"https://api.github.com/users/applegrain","html_url":"https://github.com/applegrain","followers_url":"https://api.github.com/users/applegrain/followers","following_url":"https://api.github.com/users/applegrain/following{/other_user}","gists_url":"https://api.github.com/users/applegrain/gists{/gist_id}","starred_url":"https://api.github.com/users/applegrain/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/applegrain/subscriptions","organizations_url":"https://api.github.com/users/applegrain/orgs","repos_url":"https://api.github.com/users/applegrain/repos","events_url":"https://api.github.com/users/applegrain/events{/privacy}","received_events_url":"https://api.github.com/users/applegrain/received_events","type":"User","site_admin":false},"parents":[{"sha":"1b26a3e64f553fcefae181e5d5a25af6300510b3","url":"https://api.github.com/repos/applegrain/1507-workshop/commits/1b26a3e64f553fcefae181e5d5a25af6300510b3","html_url":"https://github.com/applegrain/1507-workshop/commit/1b26a3e64f553fcefae181e5d5a25af6300510b3"}]},{"sha":"1b26a3e64f553fcefae181e5d5a25af6300510b3","commit":{"author":{"name":"Lovisa
-        Svallingson","email":"applegrain@users.noreply.github.com","date":"2015-06-26T17:30:12Z"},"committer":{"name":"Lovisa
-        Svallingson","email":"applegrain@users.noreply.github.com","date":"2015-06-26T17:30:12Z"},"message":"Update
-        outline.md","tree":{"sha":"f59cd89cf07fef6c272b1aafa6942579a89fbf1e","url":"https://api.github.com/repos/applegrain/1507-workshop/git/trees/f59cd89cf07fef6c272b1aafa6942579a89fbf1e"},"url":"https://api.github.com/repos/applegrain/1507-workshop/git/commits/1b26a3e64f553fcefae181e5d5a25af6300510b3","comment_count":0},"url":"https://api.github.com/repos/applegrain/1507-workshop/commits/1b26a3e64f553fcefae181e5d5a25af6300510b3","html_url":"https://github.com/applegrain/1507-workshop/commit/1b26a3e64f553fcefae181e5d5a25af6300510b3","comments_url":"https://api.github.com/repos/applegrain/1507-workshop/commits/1b26a3e64f553fcefae181e5d5a25af6300510b3/comments","author":{"login":"applegrain","id":10555255,"avatar_url":"https://avatars.githubusercontent.com/u/10555255?v=3","gravatar_id":"","url":"https://api.github.com/users/applegrain","html_url":"https://github.com/applegrain","followers_url":"https://api.github.com/users/applegrain/followers","following_url":"https://api.github.com/users/applegrain/following{/other_user}","gists_url":"https://api.github.com/users/applegrain/gists{/gist_id}","starred_url":"https://api.github.com/users/applegrain/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/applegrain/subscriptions","organizations_url":"https://api.github.com/users/applegrain/orgs","repos_url":"https://api.github.com/users/applegrain/repos","events_url":"https://api.github.com/users/applegrain/events{/privacy}","received_events_url":"https://api.github.com/users/applegrain/received_events","type":"User","site_admin":false},"committer":{"login":"applegrain","id":10555255,"avatar_url":"https://avatars.githubusercontent.com/u/10555255?v=3","gravatar_id":"","url":"https://api.github.com/users/applegrain","html_url":"https://github.com/applegrain","followers_url":"https://api.github.com/users/applegrain/followers","following_url":"https://api.github.com/users/applegrain/following{/other_user}","gists_url":"https://api.github.com/users/applegrain/gists{/gist_id}","starred_url":"https://api.github.com/users/applegrain/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/applegrain/subscriptions","organizations_url":"https://api.github.com/users/applegrain/orgs","repos_url":"https://api.github.com/users/applegrain/repos","events_url":"https://api.github.com/users/applegrain/events{/privacy}","received_events_url":"https://api.github.com/users/applegrain/received_events","type":"User","site_admin":false},"parents":[{"sha":"57215774d3e11155cb73d0ecb7e726ddb1505a63","url":"https://api.github.com/repos/applegrain/1507-workshop/commits/57215774d3e11155cb73d0ecb7e726ddb1505a63","html_url":"https://github.com/applegrain/1507-workshop/commit/57215774d3e11155cb73d0ecb7e726ddb1505a63"}]},{"sha":"57215774d3e11155cb73d0ecb7e726ddb1505a63","commit":{"author":{"name":"Lovisa
-        Svallingson","email":"applegrain@users.noreply.github.com","date":"2015-06-26T17:28:43Z"},"committer":{"name":"Lovisa
-        Svallingson","email":"applegrain@users.noreply.github.com","date":"2015-06-26T17:28:43Z"},"message":"Merge
-        pull request #1 from mrjaimisra/patch-1\n\nAdd additional details","tree":{"sha":"1aba7e85001debf7ed42d33d66f20b474eb3ce97","url":"https://api.github.com/repos/applegrain/1507-workshop/git/trees/1aba7e85001debf7ed42d33d66f20b474eb3ce97"},"url":"https://api.github.com/repos/applegrain/1507-workshop/git/commits/57215774d3e11155cb73d0ecb7e726ddb1505a63","comment_count":0},"url":"https://api.github.com/repos/applegrain/1507-workshop/commits/57215774d3e11155cb73d0ecb7e726ddb1505a63","html_url":"https://github.com/applegrain/1507-workshop/commit/57215774d3e11155cb73d0ecb7e726ddb1505a63","comments_url":"https://api.github.com/repos/applegrain/1507-workshop/commits/57215774d3e11155cb73d0ecb7e726ddb1505a63/comments","author":{"login":"applegrain","id":10555255,"avatar_url":"https://avatars.githubusercontent.com/u/10555255?v=3","gravatar_id":"","url":"https://api.github.com/users/applegrain","html_url":"https://github.com/applegrain","followers_url":"https://api.github.com/users/applegrain/followers","following_url":"https://api.github.com/users/applegrain/following{/other_user}","gists_url":"https://api.github.com/users/applegrain/gists{/gist_id}","starred_url":"https://api.github.com/users/applegrain/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/applegrain/subscriptions","organizations_url":"https://api.github.com/users/applegrain/orgs","repos_url":"https://api.github.com/users/applegrain/repos","events_url":"https://api.github.com/users/applegrain/events{/privacy}","received_events_url":"https://api.github.com/users/applegrain/received_events","type":"User","site_admin":false},"committer":{"login":"applegrain","id":10555255,"avatar_url":"https://avatars.githubusercontent.com/u/10555255?v=3","gravatar_id":"","url":"https://api.github.com/users/applegrain","html_url":"https://github.com/applegrain","followers_url":"https://api.github.com/users/applegrain/followers","following_url":"https://api.github.com/users/applegrain/following{/other_user}","gists_url":"https://api.github.com/users/applegrain/gists{/gist_id}","starred_url":"https://api.github.com/users/applegrain/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/applegrain/subscriptions","organizations_url":"https://api.github.com/users/applegrain/orgs","repos_url":"https://api.github.com/users/applegrain/repos","events_url":"https://api.github.com/users/applegrain/events{/privacy}","received_events_url":"https://api.github.com/users/applegrain/received_events","type":"User","site_admin":false},"parents":[{"sha":"b91c6b234243a86765ecbed06773f20406d3c554","url":"https://api.github.com/repos/applegrain/1507-workshop/commits/b91c6b234243a86765ecbed06773f20406d3c554","html_url":"https://github.com/applegrain/1507-workshop/commit/b91c6b234243a86765ecbed06773f20406d3c554"},{"sha":"e8100df9e8333cffbc72a89e2697585c3cc59485","url":"https://api.github.com/repos/applegrain/1507-workshop/commits/e8100df9e8333cffbc72a89e2697585c3cc59485","html_url":"https://github.com/applegrain/1507-workshop/commit/e8100df9e8333cffbc72a89e2697585c3cc59485"}]},{"sha":"e8100df9e8333cffbc72a89e2697585c3cc59485","commit":{"author":{"name":"Jai
-        Misra","email":"misrajai01@gmail.com","date":"2015-06-26T17:27:43Z"},"committer":{"name":"Jai
-        Misra","email":"misrajai01@gmail.com","date":"2015-06-26T17:27:43Z"},"message":"Update
-        outline.md","tree":{"sha":"1aba7e85001debf7ed42d33d66f20b474eb3ce97","url":"https://api.github.com/repos/applegrain/1507-workshop/git/trees/1aba7e85001debf7ed42d33d66f20b474eb3ce97"},"url":"https://api.github.com/repos/applegrain/1507-workshop/git/commits/e8100df9e8333cffbc72a89e2697585c3cc59485","comment_count":0},"url":"https://api.github.com/repos/applegrain/1507-workshop/commits/e8100df9e8333cffbc72a89e2697585c3cc59485","html_url":"https://github.com/applegrain/1507-workshop/commit/e8100df9e8333cffbc72a89e2697585c3cc59485","comments_url":"https://api.github.com/repos/applegrain/1507-workshop/commits/e8100df9e8333cffbc72a89e2697585c3cc59485/comments","author":{"login":"mrjaimisra","id":8093774,"avatar_url":"https://avatars.githubusercontent.com/u/8093774?v=3","gravatar_id":"","url":"https://api.github.com/users/mrjaimisra","html_url":"https://github.com/mrjaimisra","followers_url":"https://api.github.com/users/mrjaimisra/followers","following_url":"https://api.github.com/users/mrjaimisra/following{/other_user}","gists_url":"https://api.github.com/users/mrjaimisra/gists{/gist_id}","starred_url":"https://api.github.com/users/mrjaimisra/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/mrjaimisra/subscriptions","organizations_url":"https://api.github.com/users/mrjaimisra/orgs","repos_url":"https://api.github.com/users/mrjaimisra/repos","events_url":"https://api.github.com/users/mrjaimisra/events{/privacy}","received_events_url":"https://api.github.com/users/mrjaimisra/received_events","type":"User","site_admin":false},"committer":{"login":"mrjaimisra","id":8093774,"avatar_url":"https://avatars.githubusercontent.com/u/8093774?v=3","gravatar_id":"","url":"https://api.github.com/users/mrjaimisra","html_url":"https://github.com/mrjaimisra","followers_url":"https://api.github.com/users/mrjaimisra/followers","following_url":"https://api.github.com/users/mrjaimisra/following{/other_user}","gists_url":"https://api.github.com/users/mrjaimisra/gists{/gist_id}","starred_url":"https://api.github.com/users/mrjaimisra/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/mrjaimisra/subscriptions","organizations_url":"https://api.github.com/users/mrjaimisra/orgs","repos_url":"https://api.github.com/users/mrjaimisra/repos","events_url":"https://api.github.com/users/mrjaimisra/events{/privacy}","received_events_url":"https://api.github.com/users/mrjaimisra/received_events","type":"User","site_admin":false},"parents":[{"sha":"b91c6b234243a86765ecbed06773f20406d3c554","url":"https://api.github.com/repos/applegrain/1507-workshop/commits/b91c6b234243a86765ecbed06773f20406d3c554","html_url":"https://github.com/applegrain/1507-workshop/commit/b91c6b234243a86765ecbed06773f20406d3c554"}]},{"sha":"b91c6b234243a86765ecbed06773f20406d3c554","commit":{"author":{"name":"Lovisa
-        Svallingson","email":"applegrain@users.noreply.github.com","date":"2015-06-26T16:59:30Z"},"committer":{"name":"Lovisa
-        Svallingson","email":"applegrain@users.noreply.github.com","date":"2015-06-26T16:59:30Z"},"message":"Update
-        outline.md","tree":{"sha":"c2b604285672f02383e01b2e39c40d2ed5200594","url":"https://api.github.com/repos/applegrain/1507-workshop/git/trees/c2b604285672f02383e01b2e39c40d2ed5200594"},"url":"https://api.github.com/repos/applegrain/1507-workshop/git/commits/b91c6b234243a86765ecbed06773f20406d3c554","comment_count":0},"url":"https://api.github.com/repos/applegrain/1507-workshop/commits/b91c6b234243a86765ecbed06773f20406d3c554","html_url":"https://github.com/applegrain/1507-workshop/commit/b91c6b234243a86765ecbed06773f20406d3c554","comments_url":"https://api.github.com/repos/applegrain/1507-workshop/commits/b91c6b234243a86765ecbed06773f20406d3c554/comments","author":{"login":"applegrain","id":10555255,"avatar_url":"https://avatars.githubusercontent.com/u/10555255?v=3","gravatar_id":"","url":"https://api.github.com/users/applegrain","html_url":"https://github.com/applegrain","followers_url":"https://api.github.com/users/applegrain/followers","following_url":"https://api.github.com/users/applegrain/following{/other_user}","gists_url":"https://api.github.com/users/applegrain/gists{/gist_id}","starred_url":"https://api.github.com/users/applegrain/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/applegrain/subscriptions","organizations_url":"https://api.github.com/users/applegrain/orgs","repos_url":"https://api.github.com/users/applegrain/repos","events_url":"https://api.github.com/users/applegrain/events{/privacy}","received_events_url":"https://api.github.com/users/applegrain/received_events","type":"User","site_admin":false},"committer":{"login":"applegrain","id":10555255,"avatar_url":"https://avatars.githubusercontent.com/u/10555255?v=3","gravatar_id":"","url":"https://api.github.com/users/applegrain","html_url":"https://github.com/applegrain","followers_url":"https://api.github.com/users/applegrain/followers","following_url":"https://api.github.com/users/applegrain/following{/other_user}","gists_url":"https://api.github.com/users/applegrain/gists{/gist_id}","starred_url":"https://api.github.com/users/applegrain/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/applegrain/subscriptions","organizations_url":"https://api.github.com/users/applegrain/orgs","repos_url":"https://api.github.com/users/applegrain/repos","events_url":"https://api.github.com/users/applegrain/events{/privacy}","received_events_url":"https://api.github.com/users/applegrain/received_events","type":"User","site_admin":false},"parents":[{"sha":"6db7e8ad5c49aa065170b200a52a387c1e4ba66c","url":"https://api.github.com/repos/applegrain/1507-workshop/commits/6db7e8ad5c49aa065170b200a52a387c1e4ba66c","html_url":"https://github.com/applegrain/1507-workshop/commit/6db7e8ad5c49aa065170b200a52a387c1e4ba66c"}]},{"sha":"6db7e8ad5c49aa065170b200a52a387c1e4ba66c","commit":{"author":{"name":"Lovisa
-        Svallingson","email":"applegrain@users.noreply.github.com","date":"2015-06-26T16:54:37Z"},"committer":{"name":"Lovisa
-        Svallingson","email":"applegrain@users.noreply.github.com","date":"2015-06-26T16:54:37Z"},"message":"Create
-        README.md","tree":{"sha":"9fc795f91b21fe974a8a8f13480b65d50edbc133","url":"https://api.github.com/repos/applegrain/1507-workshop/git/trees/9fc795f91b21fe974a8a8f13480b65d50edbc133"},"url":"https://api.github.com/repos/applegrain/1507-workshop/git/commits/6db7e8ad5c49aa065170b200a52a387c1e4ba66c","comment_count":0},"url":"https://api.github.com/repos/applegrain/1507-workshop/commits/6db7e8ad5c49aa065170b200a52a387c1e4ba66c","html_url":"https://github.com/applegrain/1507-workshop/commit/6db7e8ad5c49aa065170b200a52a387c1e4ba66c","comments_url":"https://api.github.com/repos/applegrain/1507-workshop/commits/6db7e8ad5c49aa065170b200a52a387c1e4ba66c/comments","author":{"login":"applegrain","id":10555255,"avatar_url":"https://avatars.githubusercontent.com/u/10555255?v=3","gravatar_id":"","url":"https://api.github.com/users/applegrain","html_url":"https://github.com/applegrain","followers_url":"https://api.github.com/users/applegrain/followers","following_url":"https://api.github.com/users/applegrain/following{/other_user}","gists_url":"https://api.github.com/users/applegrain/gists{/gist_id}","starred_url":"https://api.github.com/users/applegrain/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/applegrain/subscriptions","organizations_url":"https://api.github.com/users/applegrain/orgs","repos_url":"https://api.github.com/users/applegrain/repos","events_url":"https://api.github.com/users/applegrain/events{/privacy}","received_events_url":"https://api.github.com/users/applegrain/received_events","type":"User","site_admin":false},"committer":{"login":"applegrain","id":10555255,"avatar_url":"https://avatars.githubusercontent.com/u/10555255?v=3","gravatar_id":"","url":"https://api.github.com/users/applegrain","html_url":"https://github.com/applegrain","followers_url":"https://api.github.com/users/applegrain/followers","following_url":"https://api.github.com/users/applegrain/following{/other_user}","gists_url":"https://api.github.com/users/applegrain/gists{/gist_id}","starred_url":"https://api.github.com/users/applegrain/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/applegrain/subscriptions","organizations_url":"https://api.github.com/users/applegrain/orgs","repos_url":"https://api.github.com/users/applegrain/repos","events_url":"https://api.github.com/users/applegrain/events{/privacy}","received_events_url":"https://api.github.com/users/applegrain/received_events","type":"User","site_admin":false},"parents":[{"sha":"d7df235015842ac3079b165dcf4fe0b4f9de1c65","url":"https://api.github.com/repos/applegrain/1507-workshop/commits/d7df235015842ac3079b165dcf4fe0b4f9de1c65","html_url":"https://github.com/applegrain/1507-workshop/commit/d7df235015842ac3079b165dcf4fe0b4f9de1c65"}]},{"sha":"d7df235015842ac3079b165dcf4fe0b4f9de1c65","commit":{"author":{"name":"Lovisa
-        Svallingson","email":"applegrain@users.noreply.github.com","date":"2015-06-26T16:53:59Z"},"committer":{"name":"Lovisa
-        Svallingson","email":"applegrain@users.noreply.github.com","date":"2015-06-26T16:53:59Z"},"message":"Update
-        outline.md","tree":{"sha":"d8a660c2095ec6aa4cd83a1d3898b90e6aff924c","url":"https://api.github.com/repos/applegrain/1507-workshop/git/trees/d8a660c2095ec6aa4cd83a1d3898b90e6aff924c"},"url":"https://api.github.com/repos/applegrain/1507-workshop/git/commits/d7df235015842ac3079b165dcf4fe0b4f9de1c65","comment_count":0},"url":"https://api.github.com/repos/applegrain/1507-workshop/commits/d7df235015842ac3079b165dcf4fe0b4f9de1c65","html_url":"https://github.com/applegrain/1507-workshop/commit/d7df235015842ac3079b165dcf4fe0b4f9de1c65","comments_url":"https://api.github.com/repos/applegrain/1507-workshop/commits/d7df235015842ac3079b165dcf4fe0b4f9de1c65/comments","author":{"login":"applegrain","id":10555255,"avatar_url":"https://avatars.githubusercontent.com/u/10555255?v=3","gravatar_id":"","url":"https://api.github.com/users/applegrain","html_url":"https://github.com/applegrain","followers_url":"https://api.github.com/users/applegrain/followers","following_url":"https://api.github.com/users/applegrain/following{/other_user}","gists_url":"https://api.github.com/users/applegrain/gists{/gist_id}","starred_url":"https://api.github.com/users/applegrain/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/applegrain/subscriptions","organizations_url":"https://api.github.com/users/applegrain/orgs","repos_url":"https://api.github.com/users/applegrain/repos","events_url":"https://api.github.com/users/applegrain/events{/privacy}","received_events_url":"https://api.github.com/users/applegrain/received_events","type":"User","site_admin":false},"committer":{"login":"applegrain","id":10555255,"avatar_url":"https://avatars.githubusercontent.com/u/10555255?v=3","gravatar_id":"","url":"https://api.github.com/users/applegrain","html_url":"https://github.com/applegrain","followers_url":"https://api.github.com/users/applegrain/followers","following_url":"https://api.github.com/users/applegrain/following{/other_user}","gists_url":"https://api.github.com/users/applegrain/gists{/gist_id}","starred_url":"https://api.github.com/users/applegrain/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/applegrain/subscriptions","organizations_url":"https://api.github.com/users/applegrain/orgs","repos_url":"https://api.github.com/users/applegrain/repos","events_url":"https://api.github.com/users/applegrain/events{/privacy}","received_events_url":"https://api.github.com/users/applegrain/received_events","type":"User","site_admin":false},"parents":[{"sha":"616909ce87f1a6006b30532844bbb98db40d3ee0","url":"https://api.github.com/repos/applegrain/1507-workshop/commits/616909ce87f1a6006b30532844bbb98db40d3ee0","html_url":"https://github.com/applegrain/1507-workshop/commit/616909ce87f1a6006b30532844bbb98db40d3ee0"}]},{"sha":"616909ce87f1a6006b30532844bbb98db40d3ee0","commit":{"author":{"name":"Lovisa
-        Svallingson","email":"applegrain@users.noreply.github.com","date":"2015-06-26T16:46:11Z"},"committer":{"name":"Lovisa
-        Svallingson","email":"applegrain@users.noreply.github.com","date":"2015-06-26T16:46:11Z"},"message":"update
-        outline","tree":{"sha":"a3130876cceaea2cff4f970794fda651e0fd0083","url":"https://api.github.com/repos/applegrain/1507-workshop/git/trees/a3130876cceaea2cff4f970794fda651e0fd0083"},"url":"https://api.github.com/repos/applegrain/1507-workshop/git/commits/616909ce87f1a6006b30532844bbb98db40d3ee0","comment_count":0},"url":"https://api.github.com/repos/applegrain/1507-workshop/commits/616909ce87f1a6006b30532844bbb98db40d3ee0","html_url":"https://github.com/applegrain/1507-workshop/commit/616909ce87f1a6006b30532844bbb98db40d3ee0","comments_url":"https://api.github.com/repos/applegrain/1507-workshop/commits/616909ce87f1a6006b30532844bbb98db40d3ee0/comments","author":{"login":"applegrain","id":10555255,"avatar_url":"https://avatars.githubusercontent.com/u/10555255?v=3","gravatar_id":"","url":"https://api.github.com/users/applegrain","html_url":"https://github.com/applegrain","followers_url":"https://api.github.com/users/applegrain/followers","following_url":"https://api.github.com/users/applegrain/following{/other_user}","gists_url":"https://api.github.com/users/applegrain/gists{/gist_id}","starred_url":"https://api.github.com/users/applegrain/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/applegrain/subscriptions","organizations_url":"https://api.github.com/users/applegrain/orgs","repos_url":"https://api.github.com/users/applegrain/repos","events_url":"https://api.github.com/users/applegrain/events{/privacy}","received_events_url":"https://api.github.com/users/applegrain/received_events","type":"User","site_admin":false},"committer":{"login":"applegrain","id":10555255,"avatar_url":"https://avatars.githubusercontent.com/u/10555255?v=3","gravatar_id":"","url":"https://api.github.com/users/applegrain","html_url":"https://github.com/applegrain","followers_url":"https://api.github.com/users/applegrain/followers","following_url":"https://api.github.com/users/applegrain/following{/other_user}","gists_url":"https://api.github.com/users/applegrain/gists{/gist_id}","starred_url":"https://api.github.com/users/applegrain/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/applegrain/subscriptions","organizations_url":"https://api.github.com/users/applegrain/orgs","repos_url":"https://api.github.com/users/applegrain/repos","events_url":"https://api.github.com/users/applegrain/events{/privacy}","received_events_url":"https://api.github.com/users/applegrain/received_events","type":"User","site_admin":false},"parents":[{"sha":"1cac5e87b912e8b85c2a00542798a9ee7e06e294","url":"https://api.github.com/repos/applegrain/1507-workshop/commits/1cac5e87b912e8b85c2a00542798a9ee7e06e294","html_url":"https://github.com/applegrain/1507-workshop/commit/1cac5e87b912e8b85c2a00542798a9ee7e06e294"}]},{"sha":"1cac5e87b912e8b85c2a00542798a9ee7e06e294","commit":{"author":{"name":"Lovisa
-        Svallingson","email":"applegrain@users.noreply.github.com","date":"2015-06-26T16:45:11Z"},"committer":{"name":"Lovisa
-        Svallingson","email":"applegrain@users.noreply.github.com","date":"2015-06-26T16:45:11Z"},"message":"Add
-        details to outline","tree":{"sha":"7b6fb4eba1b18de77c9011e6336febad9a9b2401","url":"https://api.github.com/repos/applegrain/1507-workshop/git/trees/7b6fb4eba1b18de77c9011e6336febad9a9b2401"},"url":"https://api.github.com/repos/applegrain/1507-workshop/git/commits/1cac5e87b912e8b85c2a00542798a9ee7e06e294","comment_count":0},"url":"https://api.github.com/repos/applegrain/1507-workshop/commits/1cac5e87b912e8b85c2a00542798a9ee7e06e294","html_url":"https://github.com/applegrain/1507-workshop/commit/1cac5e87b912e8b85c2a00542798a9ee7e06e294","comments_url":"https://api.github.com/repos/applegrain/1507-workshop/commits/1cac5e87b912e8b85c2a00542798a9ee7e06e294/comments","author":{"login":"applegrain","id":10555255,"avatar_url":"https://avatars.githubusercontent.com/u/10555255?v=3","gravatar_id":"","url":"https://api.github.com/users/applegrain","html_url":"https://github.com/applegrain","followers_url":"https://api.github.com/users/applegrain/followers","following_url":"https://api.github.com/users/applegrain/following{/other_user}","gists_url":"https://api.github.com/users/applegrain/gists{/gist_id}","starred_url":"https://api.github.com/users/applegrain/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/applegrain/subscriptions","organizations_url":"https://api.github.com/users/applegrain/orgs","repos_url":"https://api.github.com/users/applegrain/repos","events_url":"https://api.github.com/users/applegrain/events{/privacy}","received_events_url":"https://api.github.com/users/applegrain/received_events","type":"User","site_admin":false},"committer":{"login":"applegrain","id":10555255,"avatar_url":"https://avatars.githubusercontent.com/u/10555255?v=3","gravatar_id":"","url":"https://api.github.com/users/applegrain","html_url":"https://github.com/applegrain","followers_url":"https://api.github.com/users/applegrain/followers","following_url":"https://api.github.com/users/applegrain/following{/other_user}","gists_url":"https://api.github.com/users/applegrain/gists{/gist_id}","starred_url":"https://api.github.com/users/applegrain/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/applegrain/subscriptions","organizations_url":"https://api.github.com/users/applegrain/orgs","repos_url":"https://api.github.com/users/applegrain/repos","events_url":"https://api.github.com/users/applegrain/events{/privacy}","received_events_url":"https://api.github.com/users/applegrain/received_events","type":"User","site_admin":false},"parents":[{"sha":"f4fc5f80b979cdc2bca9b553364a2caf0157ae71","url":"https://api.github.com/repos/applegrain/1507-workshop/commits/f4fc5f80b979cdc2bca9b553364a2caf0157ae71","html_url":"https://github.com/applegrain/1507-workshop/commit/f4fc5f80b979cdc2bca9b553364a2caf0157ae71"}]},{"sha":"f4fc5f80b979cdc2bca9b553364a2caf0157ae71","commit":{"author":{"name":"Lovisa
-        Svallingson","email":"lovisasvallingson@gmail.com","date":"2015-06-26T16:29:19Z"},"committer":{"name":"Lovisa
-        Svallingson","email":"lovisasvallingson@gmail.com","date":"2015-06-26T16:29:19Z"},"message":"initial
-        commit, workshop outline","tree":{"sha":"26b8752b3e8bd55fd630a7338ff2bec9cff49ef8","url":"https://api.github.com/repos/applegrain/1507-workshop/git/trees/26b8752b3e8bd55fd630a7338ff2bec9cff49ef8"},"url":"https://api.github.com/repos/applegrain/1507-workshop/git/commits/f4fc5f80b979cdc2bca9b553364a2caf0157ae71","comment_count":0},"url":"https://api.github.com/repos/applegrain/1507-workshop/commits/f4fc5f80b979cdc2bca9b553364a2caf0157ae71","html_url":"https://github.com/applegrain/1507-workshop/commit/f4fc5f80b979cdc2bca9b553364a2caf0157ae71","comments_url":"https://api.github.com/repos/applegrain/1507-workshop/commits/f4fc5f80b979cdc2bca9b553364a2caf0157ae71/comments","author":{"login":"applegrain","id":10555255,"avatar_url":"https://avatars.githubusercontent.com/u/10555255?v=3","gravatar_id":"","url":"https://api.github.com/users/applegrain","html_url":"https://github.com/applegrain","followers_url":"https://api.github.com/users/applegrain/followers","following_url":"https://api.github.com/users/applegrain/following{/other_user}","gists_url":"https://api.github.com/users/applegrain/gists{/gist_id}","starred_url":"https://api.github.com/users/applegrain/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/applegrain/subscriptions","organizations_url":"https://api.github.com/users/applegrain/orgs","repos_url":"https://api.github.com/users/applegrain/repos","events_url":"https://api.github.com/users/applegrain/events{/privacy}","received_events_url":"https://api.github.com/users/applegrain/received_events","type":"User","site_admin":false},"committer":{"login":"applegrain","id":10555255,"avatar_url":"https://avatars.githubusercontent.com/u/10555255?v=3","gravatar_id":"","url":"https://api.github.com/users/applegrain","html_url":"https://github.com/applegrain","followers_url":"https://api.github.com/users/applegrain/followers","following_url":"https://api.github.com/users/applegrain/following{/other_user}","gists_url":"https://api.github.com/users/applegrain/gists{/gist_id}","starred_url":"https://api.github.com/users/applegrain/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/applegrain/subscriptions","organizations_url":"https://api.github.com/users/applegrain/orgs","repos_url":"https://api.github.com/users/applegrain/repos","events_url":"https://api.github.com/users/applegrain/events{/privacy}","received_events_url":"https://api.github.com/users/applegrain/received_events","type":"User","site_admin":false},"parents":[]}]'
-    http_version: '1.1'
-  recorded_at: Wed, 09 Sep 2015 19:32:30 GMT
+    http_version: 
+  recorded_at: Wed, 09 Sep 2015 21:59:09 GMT
 - request:
     method: get
     uri: https://api.github.com/repos/user/configs/commits
@@ -264,71 +79,67 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      user-agent:
+      User-Agent:
       - Hurley v0.2
-      accept-encoding:
+      Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      accept:
+      Accept:
       - "*/*"
   response:
     status:
       code: 200
       message: OK
     headers:
-      server:
+      Server:
       - GitHub.com
-      date:
-      - Wed, 09 Sep 2015 19:38:05 GMT
-      content-type:
+      Date:
+      - Wed, 09 Sep 2015 21:59:08 GMT
+      Content-Type:
       - application/json; charset=utf-8
-      transfer-encoding:
+      Transfer-Encoding:
       - chunked
-      connection:
-      - close
-      status:
+      Status:
       - 200 OK
-      x-ratelimit-limit:
+      X-Ratelimit-Limit:
       - '60'
-      x-ratelimit-remaining:
-      - '24'
-      x-ratelimit-reset:
-      - '1441829062'
-      cache-control:
+      X-Ratelimit-Remaining:
+      - '14'
+      X-Ratelimit-Reset:
+      - '1441836446'
+      Cache-Control:
       - public, max-age=60, s-maxage=60
-      last-modified:
+      Last-Modified:
       - Tue, 08 Sep 2015 21:11:39 GMT
-      etag:
+      Etag:
       - W/"a6d44ec6d063c861ded68067de319df9"
-      vary:
+      Vary:
       - Accept
       - Accept-Encoding
-      x-github-media-type:
+      X-Github-Media-Type:
       - github.v3
-      link:
+      Link:
       - <https://api.github.com/repositories/6892125/commits?page=2>; rel="next"
-      x-xss-protection:
+      X-Xss-Protection:
       - 1; mode=block
-      x-frame-options:
+      X-Frame-Options:
       - deny
-      content-security-policy:
+      Content-Security-Policy:
       - default-src 'none'
-      access-control-allow-credentials:
+      Access-Control-Allow-Credentials:
       - 'true'
-      access-control-expose-headers:
+      Access-Control-Expose-Headers:
       - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
         X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
-      access-control-allow-origin:
+      Access-Control-Allow-Origin:
       - "*"
-      x-github-request-id:
-      - 4999852B:13219:8A5342B:55F08A9C
-      strict-transport-security:
+      X-Github-Request-Id:
+      - 4999852B:19D7:4200102:55F0ABAC
+      Strict-Transport-Security:
       - max-age=31536000; includeSubdomains; preload
-      x-content-type-options:
+      X-Content-Type-Options:
       - nosniff
-      x-served-by:
-      - b0ef53392caa42315c6206737946d931
-      content-encoding:
-      - gzip
+      X-Served-By:
+      - 4c8b2d4732c413f4b9aefe394bd65569
     body:
       encoding: ASCII-8BIT
       string: '[{"sha":"7beb6ea20c3e4c549e9aba2edcabf8caefdeec6e","commit":{"author":{"name":"Ilya
@@ -410,8 +221,8 @@ http_interactions:
         Solovyov","email":"shomyos@gmail.com","date":"2015-08-12T21:05:21Z"},"message":"sync","tree":{"sha":"d98b684606e81d076ac88c5b417c3b3471986a08","url":"https://api.github.com/repos/user/configs/git/trees/d98b684606e81d076ac88c5b417c3b3471986a08"},"url":"https://api.github.com/repos/user/configs/git/commits/1b8e214c06c6997c33abe891f326376f4babbb8b","comment_count":0},"url":"https://api.github.com/repos/user/configs/commits/1b8e214c06c6997c33abe891f326376f4babbb8b","html_url":"https://github.com/user/configs/commit/1b8e214c06c6997c33abe891f326376f4babbb8b","comments_url":"https://api.github.com/repos/user/configs/commits/1b8e214c06c6997c33abe891f326376f4babbb8b/comments","author":{"login":"user","id":14959,"avatar_url":"https://avatars.githubusercontent.com/u/14959?v=3","gravatar_id":"","url":"https://api.github.com/users/user","html_url":"https://github.com/user","followers_url":"https://api.github.com/users/user/followers","following_url":"https://api.github.com/users/user/following{/other_user}","gists_url":"https://api.github.com/users/user/gists{/gist_id}","starred_url":"https://api.github.com/users/user/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/user/subscriptions","organizations_url":"https://api.github.com/users/user/orgs","repos_url":"https://api.github.com/users/user/repos","events_url":"https://api.github.com/users/user/events{/privacy}","received_events_url":"https://api.github.com/users/user/received_events","type":"User","site_admin":false},"committer":{"login":"user","id":14959,"avatar_url":"https://avatars.githubusercontent.com/u/14959?v=3","gravatar_id":"","url":"https://api.github.com/users/user","html_url":"https://github.com/user","followers_url":"https://api.github.com/users/user/followers","following_url":"https://api.github.com/users/user/following{/other_user}","gists_url":"https://api.github.com/users/user/gists{/gist_id}","starred_url":"https://api.github.com/users/user/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/user/subscriptions","organizations_url":"https://api.github.com/users/user/orgs","repos_url":"https://api.github.com/users/user/repos","events_url":"https://api.github.com/users/user/events{/privacy}","received_events_url":"https://api.github.com/users/user/received_events","type":"User","site_admin":false},"parents":[{"sha":"0f42d74a6453e48d66e23e174cbb18c890527826","url":"https://api.github.com/repos/user/configs/commits/0f42d74a6453e48d66e23e174cbb18c890527826","html_url":"https://github.com/user/configs/commit/0f42d74a6453e48d66e23e174cbb18c890527826"}]},{"sha":"0f42d74a6453e48d66e23e174cbb18c890527826","commit":{"author":{"name":"Ilya
         Solovyov","email":"shomyos@gmail.com","date":"2015-08-11T21:58:47Z"},"committer":{"name":"Ilya
         Solovyov","email":"shomyos@gmail.com","date":"2015-08-11T21:58:47Z"},"message":"sync","tree":{"sha":"b656ebfa9cd9a97c7ad72d102c7ae3b8d5f3932d","url":"https://api.github.com/repos/user/configs/git/trees/b656ebfa9cd9a97c7ad72d102c7ae3b8d5f3932d"},"url":"https://api.github.com/repos/user/configs/git/commits/0f42d74a6453e48d66e23e174cbb18c890527826","comment_count":0},"url":"https://api.github.com/repos/user/configs/commits/0f42d74a6453e48d66e23e174cbb18c890527826","html_url":"https://github.com/user/configs/commit/0f42d74a6453e48d66e23e174cbb18c890527826","comments_url":"https://api.github.com/repos/user/configs/commits/0f42d74a6453e48d66e23e174cbb18c890527826/comments","author":{"login":"user","id":14959,"avatar_url":"https://avatars.githubusercontent.com/u/14959?v=3","gravatar_id":"","url":"https://api.github.com/users/user","html_url":"https://github.com/user","followers_url":"https://api.github.com/users/user/followers","following_url":"https://api.github.com/users/user/following{/other_user}","gists_url":"https://api.github.com/users/user/gists{/gist_id}","starred_url":"https://api.github.com/users/user/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/user/subscriptions","organizations_url":"https://api.github.com/users/user/orgs","repos_url":"https://api.github.com/users/user/repos","events_url":"https://api.github.com/users/user/events{/privacy}","received_events_url":"https://api.github.com/users/user/received_events","type":"User","site_admin":false},"committer":{"login":"user","id":14959,"avatar_url":"https://avatars.githubusercontent.com/u/14959?v=3","gravatar_id":"","url":"https://api.github.com/users/user","html_url":"https://github.com/user","followers_url":"https://api.github.com/users/user/followers","following_url":"https://api.github.com/users/user/following{/other_user}","gists_url":"https://api.github.com/users/user/gists{/gist_id}","starred_url":"https://api.github.com/users/user/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/user/subscriptions","organizations_url":"https://api.github.com/users/user/orgs","repos_url":"https://api.github.com/users/user/repos","events_url":"https://api.github.com/users/user/events{/privacy}","received_events_url":"https://api.github.com/users/user/received_events","type":"User","site_admin":false},"parents":[{"sha":"ee07ad12f4e40e7187330e7e0857d3f9ff73f8d5","url":"https://api.github.com/repos/user/configs/commits/ee07ad12f4e40e7187330e7e0857d3f9ff73f8d5","html_url":"https://github.com/user/configs/commit/ee07ad12f4e40e7187330e7e0857d3f9ff73f8d5"}]}]'
-    http_version: '1.1'
-  recorded_at: Wed, 09 Sep 2015 19:38:05 GMT
+    http_version: 
+  recorded_at: Wed, 09 Sep 2015 21:59:09 GMT
 - request:
     method: get
     uri: https://api.github.com/repos/user/dwm/commits
@@ -419,71 +230,67 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      user-agent:
+      User-Agent:
       - Hurley v0.2
-      accept-encoding:
+      Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      accept:
+      Accept:
       - "*/*"
   response:
     status:
       code: 200
       message: OK
     headers:
-      server:
+      Server:
       - GitHub.com
-      date:
-      - Wed, 09 Sep 2015 19:38:36 GMT
-      content-type:
+      Date:
+      - Wed, 09 Sep 2015 21:59:08 GMT
+      Content-Type:
       - application/json; charset=utf-8
-      transfer-encoding:
+      Transfer-Encoding:
       - chunked
-      connection:
-      - close
-      status:
+      Status:
       - 200 OK
-      x-ratelimit-limit:
+      X-Ratelimit-Limit:
       - '60'
-      x-ratelimit-remaining:
-      - '23'
-      x-ratelimit-reset:
-      - '1441829062'
-      cache-control:
+      X-Ratelimit-Remaining:
+      - '13'
+      X-Ratelimit-Reset:
+      - '1441836446'
+      Cache-Control:
       - public, max-age=60, s-maxage=60
-      last-modified:
+      Last-Modified:
       - Wed, 13 May 2015 10:57:54 GMT
-      etag:
+      Etag:
       - W/"b92875126790e8a28cf0c817553558af"
-      vary:
+      Vary:
       - Accept
       - Accept-Encoding
-      x-github-media-type:
+      X-Github-Media-Type:
       - github.v3
-      link:
+      Link:
       - <https://api.github.com/repositories/6783187/commits?page=2>; rel="next"
-      x-xss-protection:
+      X-Xss-Protection:
       - 1; mode=block
-      x-frame-options:
+      X-Frame-Options:
       - deny
-      content-security-policy:
+      Content-Security-Policy:
       - default-src 'none'
-      access-control-allow-credentials:
+      Access-Control-Allow-Credentials:
       - 'true'
-      access-control-expose-headers:
+      Access-Control-Expose-Headers:
       - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
         X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
-      access-control-allow-origin:
+      Access-Control-Allow-Origin:
       - "*"
-      x-github-request-id:
-      - 4999852B:1648:A1477D3:55F08ABC
-      strict-transport-security:
+      X-Github-Request-Id:
+      - 4999852B:19D8:573D6CA:55F0ABAC
+      Strict-Transport-Security:
       - max-age=31536000; includeSubdomains; preload
-      x-content-type-options:
+      X-Content-Type-Options:
       - nosniff
-      x-served-by:
-      - 173530fed4bbeb1e264b2ed22e8b5c20
-      content-encoding:
-      - gzip
+      X-Served-By:
+      - 5aeb3f30c9e3ef6ef7bcbcddfd9a68f7
     body:
       encoding: ASCII-8BIT
       string: '[{"sha":"de244166ec8b60114e9bf5f8b620e9bc7fb8d5a2","commit":{"author":{"name":"Ilya
@@ -559,8 +366,8 @@ http_interactions:
         Solovyov","email":"shomyos@gmail.com","date":"2013-01-31T14:55:00Z"},"message":"sync","tree":{"sha":"242810bec36b0194950cefe62847ab1431730cd7","url":"https://api.github.com/repos/user/dwm/git/trees/242810bec36b0194950cefe62847ab1431730cd7"},"url":"https://api.github.com/repos/user/dwm/git/commits/f4dd151fc1123d11575180b8b3dc1ac40165eb2b","comment_count":0},"url":"https://api.github.com/repos/user/dwm/commits/f4dd151fc1123d11575180b8b3dc1ac40165eb2b","html_url":"https://github.com/user/dwm/commit/f4dd151fc1123d11575180b8b3dc1ac40165eb2b","comments_url":"https://api.github.com/repos/user/dwm/commits/f4dd151fc1123d11575180b8b3dc1ac40165eb2b/comments","author":{"login":"user","id":14959,"avatar_url":"https://avatars.githubusercontent.com/u/14959?v=3","gravatar_id":"","url":"https://api.github.com/users/user","html_url":"https://github.com/user","followers_url":"https://api.github.com/users/user/followers","following_url":"https://api.github.com/users/user/following{/other_user}","gists_url":"https://api.github.com/users/user/gists{/gist_id}","starred_url":"https://api.github.com/users/user/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/user/subscriptions","organizations_url":"https://api.github.com/users/user/orgs","repos_url":"https://api.github.com/users/user/repos","events_url":"https://api.github.com/users/user/events{/privacy}","received_events_url":"https://api.github.com/users/user/received_events","type":"User","site_admin":false},"committer":{"login":"user","id":14959,"avatar_url":"https://avatars.githubusercontent.com/u/14959?v=3","gravatar_id":"","url":"https://api.github.com/users/user","html_url":"https://github.com/user","followers_url":"https://api.github.com/users/user/followers","following_url":"https://api.github.com/users/user/following{/other_user}","gists_url":"https://api.github.com/users/user/gists{/gist_id}","starred_url":"https://api.github.com/users/user/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/user/subscriptions","organizations_url":"https://api.github.com/users/user/orgs","repos_url":"https://api.github.com/users/user/repos","events_url":"https://api.github.com/users/user/events{/privacy}","received_events_url":"https://api.github.com/users/user/received_events","type":"User","site_admin":false},"parents":[{"sha":"8a22285d3bf15b0725b609a64e5c8f8be18057ff","url":"https://api.github.com/repos/user/dwm/commits/8a22285d3bf15b0725b609a64e5c8f8be18057ff","html_url":"https://github.com/user/dwm/commit/8a22285d3bf15b0725b609a64e5c8f8be18057ff"}]},{"sha":"8a22285d3bf15b0725b609a64e5c8f8be18057ff","commit":{"author":{"name":"Ilya
         Solovyov","email":"shomyos@gmail.com","date":"2013-01-31T14:50:03Z"},"committer":{"name":"Ilya
         Solovyov","email":"shomyos@gmail.com","date":"2013-01-31T14:50:03Z"},"message":"sync","tree":{"sha":"0b920d9fe322ecc42dffb984a78461129c3661d9","url":"https://api.github.com/repos/user/dwm/git/trees/0b920d9fe322ecc42dffb984a78461129c3661d9"},"url":"https://api.github.com/repos/user/dwm/git/commits/8a22285d3bf15b0725b609a64e5c8f8be18057ff","comment_count":0},"url":"https://api.github.com/repos/user/dwm/commits/8a22285d3bf15b0725b609a64e5c8f8be18057ff","html_url":"https://github.com/user/dwm/commit/8a22285d3bf15b0725b609a64e5c8f8be18057ff","comments_url":"https://api.github.com/repos/user/dwm/commits/8a22285d3bf15b0725b609a64e5c8f8be18057ff/comments","author":{"login":"user","id":14959,"avatar_url":"https://avatars.githubusercontent.com/u/14959?v=3","gravatar_id":"","url":"https://api.github.com/users/user","html_url":"https://github.com/user","followers_url":"https://api.github.com/users/user/followers","following_url":"https://api.github.com/users/user/following{/other_user}","gists_url":"https://api.github.com/users/user/gists{/gist_id}","starred_url":"https://api.github.com/users/user/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/user/subscriptions","organizations_url":"https://api.github.com/users/user/orgs","repos_url":"https://api.github.com/users/user/repos","events_url":"https://api.github.com/users/user/events{/privacy}","received_events_url":"https://api.github.com/users/user/received_events","type":"User","site_admin":false},"committer":{"login":"user","id":14959,"avatar_url":"https://avatars.githubusercontent.com/u/14959?v=3","gravatar_id":"","url":"https://api.github.com/users/user","html_url":"https://github.com/user","followers_url":"https://api.github.com/users/user/followers","following_url":"https://api.github.com/users/user/following{/other_user}","gists_url":"https://api.github.com/users/user/gists{/gist_id}","starred_url":"https://api.github.com/users/user/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/user/subscriptions","organizations_url":"https://api.github.com/users/user/orgs","repos_url":"https://api.github.com/users/user/repos","events_url":"https://api.github.com/users/user/events{/privacy}","received_events_url":"https://api.github.com/users/user/received_events","type":"User","site_admin":false},"parents":[{"sha":"c6b4072a48bb622c28eb15c3e2d23dbe8b2f6d91","url":"https://api.github.com/repos/user/dwm/commits/c6b4072a48bb622c28eb15c3e2d23dbe8b2f6d91","html_url":"https://github.com/user/dwm/commit/c6b4072a48bb622c28eb15c3e2d23dbe8b2f6d91"}]}]'
-    http_version: '1.1'
-  recorded_at: Wed, 09 Sep 2015 19:38:36 GMT
+    http_version: 
+  recorded_at: Wed, 09 Sep 2015 21:59:09 GMT
 - request:
     method: get
     uri: https://api.github.com/repos/user/st/commits
@@ -568,69 +375,65 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      user-agent:
+      User-Agent:
       - Hurley v0.2
-      accept-encoding:
+      Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      accept:
+      Accept:
       - "*/*"
   response:
     status:
       code: 200
       message: OK
     headers:
-      server:
+      Server:
       - GitHub.com
-      date:
-      - Wed, 09 Sep 2015 19:38:37 GMT
-      content-type:
+      Date:
+      - Wed, 09 Sep 2015 21:59:09 GMT
+      Content-Type:
       - application/json; charset=utf-8
-      transfer-encoding:
+      Transfer-Encoding:
       - chunked
-      connection:
-      - close
-      status:
+      Status:
       - 200 OK
-      x-ratelimit-limit:
+      X-Ratelimit-Limit:
       - '60'
-      x-ratelimit-remaining:
-      - '22'
-      x-ratelimit-reset:
-      - '1441829062'
-      cache-control:
+      X-Ratelimit-Remaining:
+      - '12'
+      X-Ratelimit-Reset:
+      - '1441836446'
+      Cache-Control:
       - public, max-age=60, s-maxage=60
-      last-modified:
+      Last-Modified:
       - Thu, 27 Aug 2015 19:51:23 GMT
-      etag:
+      Etag:
       - W/"941aee0fca928bc9f5f76fbf11c425d0"
-      vary:
+      Vary:
       - Accept
       - Accept-Encoding
-      x-github-media-type:
+      X-Github-Media-Type:
       - github.v3
-      x-xss-protection:
+      X-Xss-Protection:
       - 1; mode=block
-      x-frame-options:
+      X-Frame-Options:
       - deny
-      content-security-policy:
+      Content-Security-Policy:
       - default-src 'none'
-      access-control-allow-credentials:
+      Access-Control-Allow-Credentials:
       - 'true'
-      access-control-expose-headers:
+      Access-Control-Expose-Headers:
       - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
         X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
-      access-control-allow-origin:
+      Access-Control-Allow-Origin:
       - "*"
-      x-github-request-id:
-      - 4999852B:1644:31587FB:55F08ABD
-      strict-transport-security:
+      X-Github-Request-Id:
+      - 4999852B:19D4:1CAA27D:55F0ABAD
+      Strict-Transport-Security:
       - max-age=31536000; includeSubdomains; preload
-      x-content-type-options:
+      X-Content-Type-Options:
       - nosniff
-      x-served-by:
-      - a241e1a8264a6ace03db946c85b92db3
-      content-encoding:
-      - gzip
+      X-Served-By:
+      - 07ff1c8a09e44b62e277fae50a1b1dc4
     body:
       encoding: ASCII-8BIT
       string: '[{"sha":"1bf2a176a729d9e7b2f33d814acb16c2cca099cc","commit":{"author":{"name":"Ilya
@@ -685,6 +488,6 @@ http_interactions:
         Solovyov","email":"shomyos@gmail.com","date":"2012-11-23T20:56:23Z"},"committer":{"name":"Ilya
         Solovyov","email":"shomyos@gmail.com","date":"2012-11-23T20:56:23Z"},"message":"Initial
         commit","tree":{"sha":"b7f96afb8cff058d0e0b22af3a560287c0989a8d","url":"https://api.github.com/repos/user/st/git/trees/b7f96afb8cff058d0e0b22af3a560287c0989a8d"},"url":"https://api.github.com/repos/user/st/git/commits/e24a56836c9bb83f5988604e7835a1d9b9be6fe0","comment_count":0},"url":"https://api.github.com/repos/user/st/commits/e24a56836c9bb83f5988604e7835a1d9b9be6fe0","html_url":"https://github.com/user/st/commit/e24a56836c9bb83f5988604e7835a1d9b9be6fe0","comments_url":"https://api.github.com/repos/user/st/commits/e24a56836c9bb83f5988604e7835a1d9b9be6fe0/comments","author":{"login":"user","id":14959,"avatar_url":"https://avatars.githubusercontent.com/u/14959?v=3","gravatar_id":"","url":"https://api.github.com/users/user","html_url":"https://github.com/user","followers_url":"https://api.github.com/users/user/followers","following_url":"https://api.github.com/users/user/following{/other_user}","gists_url":"https://api.github.com/users/user/gists{/gist_id}","starred_url":"https://api.github.com/users/user/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/user/subscriptions","organizations_url":"https://api.github.com/users/user/orgs","repos_url":"https://api.github.com/users/user/repos","events_url":"https://api.github.com/users/user/events{/privacy}","received_events_url":"https://api.github.com/users/user/received_events","type":"User","site_admin":false},"committer":{"login":"user","id":14959,"avatar_url":"https://avatars.githubusercontent.com/u/14959?v=3","gravatar_id":"","url":"https://api.github.com/users/user","html_url":"https://github.com/user","followers_url":"https://api.github.com/users/user/followers","following_url":"https://api.github.com/users/user/following{/other_user}","gists_url":"https://api.github.com/users/user/gists{/gist_id}","starred_url":"https://api.github.com/users/user/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/user/subscriptions","organizations_url":"https://api.github.com/users/user/orgs","repos_url":"https://api.github.com/users/user/repos","events_url":"https://api.github.com/users/user/events{/privacy}","received_events_url":"https://api.github.com/users/user/received_events","type":"User","site_admin":false},"parents":[]}]'
-    http_version: '1.1'
-  recorded_at: Wed, 09 Sep 2015 19:38:37 GMT
+    http_version: 
+  recorded_at: Wed, 09 Sep 2015 21:59:10 GMT
 recorded_with: VCR 2.9.3
