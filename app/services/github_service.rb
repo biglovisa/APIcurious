@@ -7,14 +7,11 @@ class GithubService
   def find_commits(user)
     repos = find_user_repos(user)
 
-    commits = repos.inject([]) do |commits, repo|
+    repo_commits = repos.inject([]) do |commits, repo|
       commits << parse(client.get("repos/#{user.nickname}/#{repo[:name]}/commits").body)
     end
 
-    # commits returns an array of arrays
-    # the repos with the commits nested within
-    # SHOULD THIS LOGIC HAPPEN HERE OR IN THE USER MODEL?
-
+    format_commits(repo_commits)
     # display: get the calendar view with D3
   end
 
@@ -43,5 +40,13 @@ class GithubService
 
   def parse(response)
     JSON.parse(response, symbolize_names: true)
+  end
+
+  def format_commits(repos)
+    repos.map do |repo|
+      repo.map do |c|
+        c[:commit]
+      end
+    end.flatten
   end
 end
