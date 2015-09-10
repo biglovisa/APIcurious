@@ -21,19 +21,19 @@ var StatsBar = React.createClass ({
 
     switch (this.state.activeButton) {
       case 'starredRepos':
-        Content = <StarredReposTable key='dashboard-content-starred' starredRepos={this.props.starredRepos} />
+        Content = <StarredReposTable key='starred' starredRepos={this.props.starredRepos} />
         break;
       case 'followers':
-        Content = <UserDisplay key='dashboard-content-followers' users={this.props.followers} />
+        Content = <UserDisplay key='followers' users={this.props.followers} />
         break;
       case 'following':
-        Content = <UserDisplay key='dashboard-content-following' users={this.props.following} />
+        Content = <UserDisplay key='following' users={this.props.following} />
         break;
       case 'organizations':
-        Content = <OrganizationsTable key='dashboard-content-organizations' organizations={this.props.organizations} />
+        Content = <OrganizationsTable key='organizations' organizations={this.props.organizations} />
         break;
       case 'repositories':
-        Content = <RepositoriesTable key='dashboard-content-repositories' repositories={this.props.repositories} />
+        Content = <RepositoriesTable key='repositories' repositories={this.props.repositories} />
         break;
     }
 
@@ -64,7 +64,7 @@ var StatsBar = React.createClass ({
       }
     ];
 
-    var buttons = BUTTONS.map(function(button) {
+    var buttons = BUTTONS.map(function(button, index) {
       return (
         <div
           className="btn-group"
@@ -73,7 +73,8 @@ var StatsBar = React.createClass ({
           <button
             type="button"
             className="btn btn-default"
-            key={button.key} onClick={ this.handleButtonClick.bind(this, button.key) }>{button.name}</button>
+            key={ index }
+            onClick={ this.handleButtonClick.bind(this, button.key) }>{button.name}</button>
         </div>
       );
     }.bind(this));
