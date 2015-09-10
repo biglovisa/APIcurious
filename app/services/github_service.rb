@@ -1,7 +1,8 @@
 class GithubService
   attr_reader :client
-  def initialize
+  def initialize(user)
     @client = Hurley::Client.new("https://api.github.com")
+    client.query[:access_token] = user.token
   end
 
   def find_commits(user)
@@ -12,7 +13,6 @@ class GithubService
     end
 
     format_commits(repo_commits)
-    # display: get the calendar view with D3
   end
 
   def find_followers(user)
@@ -29,7 +29,6 @@ class GithubService
 
   def find_user_repos(user)
     parse(client.get("users/#{user.nickname}/repos").body)
-    # display: get all repos and by number of commits, display them in bubble diagram with D3
   end
 
   def find_user_organizations(user)
