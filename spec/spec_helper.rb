@@ -17,7 +17,6 @@ VCR.configure do |c|
 end
 
 RSpec.configure do |config|
-  # WebMock.disable_net_connect!(allow: "localhost:9292")
   stub_request(:any, "www.localhost:9292")
 
   config.expect_with :rspec do |expectations|
