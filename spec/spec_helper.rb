@@ -1,3 +1,11 @@
+if ENV["CI"]
+  require "codeclimate-test-reporter"
+  CodeClimate::TestReporter.start
+else
+  require "simplecov"
+  SimpleCov.start
+end
+
 require "vcr"
 require 'webmock/rspec'
 
@@ -9,6 +17,9 @@ VCR.configure do |c|
 end
 
 RSpec.configure do |config|
+  # WebMock.disable_net_connect!(allow: "localhost:9292")
+  stub_request(:any, "www.localhost:9292")
+
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end
@@ -37,13 +48,5 @@ RSpec.configure do |config|
                         image_url: user.image_url},
       'credentials' => {token: user.token}
     })
-  end
-
-  if ENV["CI"]
-    require "codeclimate-test-reporter"
-    CodeClimate::TestReporter.start
-  else
-    require "simplecov"
-    SimpleCov.start
   end
 end
