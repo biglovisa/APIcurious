@@ -86,7 +86,7 @@ var StatsBar = React.createClass ({
           { buttons }
         </div>
 
-        <div className="content">
+        <div className="content accordion">
           { Content }
         </div>
       </div>
@@ -106,7 +106,7 @@ var StarredReposTable = React.createClass ({
             key={ index }
             className="dataRow"
           >
-            { repo.full_name }
+            <a href={ repo.html_url } >{ repo.full_name }</a>
           </td>
         </tr>
       )
@@ -146,7 +146,7 @@ UserDisplay = React.createClass ({
           />
 
           <h3>
-            {user.login}
+            <a href={ user.html_url } >{ user.login }</a>
           </h3>
           <h4 className="follow-status">
             Follows you
@@ -168,13 +168,18 @@ var OrganizationsTable = React.createClass ({
   },
   render: function() {
     var orgs = this.props.organizations.map(function(org, index) {
+      console.log(org);
       return (
         <tr>
           <td
             key={ index }
             className="dataRow"
           >
-            { org.login }
+            <a
+              href={ org.url }
+            >
+              { org.login }
+            </a>
           </td>
         </tr>
       );
@@ -209,7 +214,7 @@ var RepositoriesTable = React.createClass ({
             key={ index }
             className="dataRow"
           >
-            { repo.full_name }
+            <a href={ repo.html_url } >{ repo.full_name }</a>
           </td>
         </tr>
       );
