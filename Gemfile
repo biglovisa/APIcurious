@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.3'
 gem 'pg'
 gem 'react-rails'
+gem 'jquery-ui-rails'
 
 gem 'sass-rails', '>= 3.2'
 gem 'bootstrap-sass', '~> 3.3.5'
@@ -17,6 +18,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'figaro'
 gem 'omniauth-github'
 gem 'hurley'
+gem 'githubstats'
 
 group :development, :test do
   gem 'pry-rails'
