@@ -5,37 +5,46 @@ class User < ActiveRecord::Base
     user.email = data.info.email,
     user.nickname = data.info.nickname,
     user.image_url = data.info.image,
-    user.token = data.info.token
+    user.token = data.credentials.token
     user.save
 
     user
   end
 
-  def self.service
-    @service ||= GithubService.new
+  def self.service(user)
+    @service ||= GithubService.new(user)
   end
 
   def service
-    self.class.service
+    self.class.service(self)
   end
 
-  def repos(user)
-    service.find_user_repos(user)
+  def commits
+    service.find_commits(self)
   end
 
-  def starred_repos(user)
-    service.find_starred_repos(user)
+  def latest_commit
+    all_commits = commits(self)
+    all_commits.first
   end
 
-  def followers(user)
-    service.find_followers(user)
+  def repos
+    service.find_user_repos(self)
   end
 
-  def following(user)
-    service.find_following(user)
+  def starred_repos
+    service.find_starred_repos(self)
   end
 
-  def organizations(user)
-    service.find_user_organizations(user)
+  def followers
+    service.find_followers(self)
+  end
+
+  def following
+    service.find_following(self)
+  end
+
+  def organizations
+    service.find_user_organizations(self)
   end
 end
