@@ -12,7 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui/accordion
+//= require jquery-ui/tooltip
 //= require react
 //= require react_ujs
 //= require components
 //= require_tree .
+
+$(function() {
+  $( "#accordion" ).accordion();
+  $( document ).tooltip();
+});

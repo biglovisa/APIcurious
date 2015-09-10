@@ -4,7 +4,12 @@ var Dashboard = React.createClass ({
   },
   render: function() {
     return (
-      <StatsBar following={ this.props.data.following } followers={ this.props.data.followers } starredRepos={ this.props.data.starredRepos } organizations={this.props.data.organizations} repositories={this.props.data.repositories} />
+      <StatsBar following={ this.props.data.following }
+                followers={ this.props.data.followers }
+                starredRepos={ this.props.data.starredRepos }
+                organizations={this.props.data.organizations}
+                repositories={this.props.data.repositories}
+                commitHistory={this.props.data.commit_history} />
     );
   }
 });
@@ -34,6 +39,9 @@ var StatsBar = React.createClass ({
         break;
       case 'repositories':
         Content = <RepositoriesTable key='repositories' repositories={this.props.repositories} />
+        break;
+      case 'commits':
+        Content = <CommitStatsTable key='commits' commitHistory={this.props.commitHistory} />
         break;
     }
 
@@ -73,7 +81,7 @@ var StatsBar = React.createClass ({
           <button
             type="button"
             className="btn btn-default"
-            key={ index }
+            key={ button.name }
             onClick={ this.handleButtonClick.bind(this, button.key) }>{button.name}</button>
         </div>
       );
@@ -86,7 +94,7 @@ var StatsBar = React.createClass ({
           { buttons }
         </div>
 
-        <div className="content accordion">
+        <div className="content" id="accordion">
           { Content }
         </div>
       </div>
@@ -229,6 +237,57 @@ var RepositoriesTable = React.createClass ({
           </thead>
           <tbody>
             { repos }
+          </tbody>
+        </table>
+      </div>
+    );
+  }
+});
+
+var CommitStatsTable = React.createClass ({
+  render: function() {
+    var NAMES = [
+      {
+        data: this.props.commitHistory.daily_commits,
+        name: "Today's contributions"
+      },
+      {
+        data: this.props.commitHistory.current_streak,
+        name: "Current Streak"
+      },
+      {
+        data: this.props.commitHistory.longest_streak,
+        name: "Longest Streak"
+      },
+      {
+        data: this.props.commitHistory.total_commits,
+        name: "Total contributions"
+      }
+    ]
+
+    var rows = NAMES.map(function(row, index) {
+      return (
+        <tr>
+          <td
+            key={ index }
+            className="dataRow"
+          >
+            {row.name} <span className="badge pull-right">{row.data}</span>
+          </td>
+        </tr>
+      );
+    });
+
+    return (
+      <div className="commits-table">
+        <table className="table table-hover">
+          <thead>
+            <tr>
+              <th>commit history</th>
+            </tr>
+          </thead>
+          <tbody>
+            { rows }
           </tbody>
         </table>
       </div>
