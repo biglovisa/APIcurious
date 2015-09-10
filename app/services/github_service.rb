@@ -10,9 +10,7 @@ class GithubService
 
     repo_commits = repos.inject([]) do |commits, repo|
       commits << parse(client.get("repos/#{user.nickname}/#{repo[:name]}/commits").body)
-    end
-
-    format_commits(repo_commits)
+    end.flatten
   end
 
   def find_followers(user)
@@ -39,13 +37,5 @@ class GithubService
 
   def parse(response)
     JSON.parse(response, symbolize_names: true)
-  end
-
-  def format_commits(repos)
-    repos.map do |repo|
-      repo.map do |c|
-        c[:commit]
-      end
-    end.flatten
   end
 end
