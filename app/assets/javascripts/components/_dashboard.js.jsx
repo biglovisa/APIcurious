@@ -4,7 +4,7 @@ var Dashboard = React.createClass ({
   },
   render: function() {
     return (
-      <StatsBar following={ this.props.data.following } followers={ this.props.data.followers } starredRepos={ this.props.data.starredRepos }  />
+      <StatsBar following={ this.props.data.following } followers={ this.props.data.followers } starredRepos={ this.props.data.starredRepos } organizations={this.props.data.organizations} repositories={this.props.data.repositories} />
     );
   }
 });
@@ -24,10 +24,16 @@ var StatsBar = React.createClass ({
         Content = <StarredReposTable key='dashboard-content-starred' starredRepos={this.props.starredRepos} />
         break;
       case 'followers':
-        Content = <FollowTable key='dashboard-content-followers' users={this.props.followers} />
+        Content = <UserDisplay key='dashboard-content-followers' users={this.props.followers} />
         break;
       case 'following':
-        Content = <FollowTable key='dashboard-content-following' users={this.props.following} />
+        Content = <UserDisplay key='dashboard-content-following' users={this.props.following} />
+        break;
+      case 'organizations':
+        Content = <OrganizationsTable key='dashboard-content-organizations' organizations={this.props.organizations} />
+        break;
+      case 'repositories':
+        Content = <RepositoriesTable key='dashboard-content-repositories' repositories={this.props.repositories} />
         break;
     }
 
@@ -98,7 +104,7 @@ var StarredReposTable = React.createClass ({
   }
 });
 
-FollowTable = React.createClass ({
+UserDisplay = React.createClass ({
   getDefaultProps: function() {
     return { users: [] }
   },
@@ -130,6 +136,75 @@ FollowTable = React.createClass ({
     return (
       <div className="follow-table">
         { users }
+      </div>
+    );
+  }
+});
+
+var OrganizationsTable = React.createClass ({
+  getDefaultProps: function() {
+    return { organizations: [] }
+  },
+  render: function() {
+    var orgs = this.props.organizations.map(function(org, index) {
+      return (
+        <tr>
+          <td
+            key={ index }
+            className="dataRow"
+          >
+            { org.login }
+          </td>
+        </tr>
+      );
+    });
+    return (
+      <div className="orgs-table">
+        <table className="table table-hover">
+          <thead>
+            <tr>
+              <th>organizations</th>
+            </tr>
+          </thead>
+          <tbody>
+            { orgs }
+          </tbody>
+        </table>
+      </div>
+    );
+  }
+});
+
+
+var RepositoriesTable = React.createClass ({
+  getDefaultProps: function() {
+    return { repositories: [] }
+  },
+  render: function() {
+    var repos = this.props.repositories.map(function(repo, index) {
+      return (
+        <tr>
+          <td
+            key={ index }
+            className="dataRow"
+          >
+            { repo.full_name }
+          </td>
+        </tr>
+      );
+    });
+    return (
+      <div className="repos-table">
+        <table className="table table-hover">
+          <thead>
+            <tr>
+              <th>repositories</th>
+            </tr>
+          </thead>
+          <tbody>
+            { repos }
+          </tbody>
+        </table>
       </div>
     );
   }
