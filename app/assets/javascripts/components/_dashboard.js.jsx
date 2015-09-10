@@ -12,26 +12,29 @@ var Dashboard = React.createClass ({
 });
 
 var StatsBar = React.createClass ({
+  handleButtonClick: function(button) {
+    console.log(button);
+  },
   render: function() {
     return (
       <div className="btn-group btn-group-justified stats-bar" role="group" aria-label="...">
         <div className="btn-group" role="group">
-          <button type="button" className="btn btn-primary">Starred Repos  <span className="glyphicon glyphicon-star"></span></button>
+          <button type="button" className="btn btn-primary" onClick={ this.handleButtonClick.bind(this, "starredRepos") }>Starred Repos  <span className="glyphicon glyphicon-star"></span></button>
         </div>
         <div className="btn-group" role="group">
-          <button type="button" className="btn btn-primary">Followers</button>
+          <button type="button" className="btn btn-primary" onClick={ this.handleButtonClick.bind(this, "followers") }>Followers</button>
         </div>
         <div className="btn-group" role="group">
-          <button type="button" className="btn btn-primary">Following</button>
+          <button type="button" className="btn btn-primary" onClick={ this.handleButtonClick.bind(this, "following") }>Following</button>
         </div>
         <div className="btn-group" role="group">
-          <button type="button" className="btn btn-primary">Repositories</button>
+          <button type="button" className="btn btn-primary" onClick={ this.handleButtonClick.bind(this, "repositories") }>Repositories</button>
         </div>
         <div className="btn-group" role="group">
-          <button type="button" className="btn btn-primary">Commit History</button>
+          <button type="button" className="btn btn-primary" onClick={ this.handleButtonClick.bind(this, "commits") }>Commit History</button>
         </div>
         <div className="btn-group" role="group">
-          <button type="button" className="btn btn-primary">Organizations</button>
+          <button type="button" className="btn btn-primary" onClick={ this.handleButtonClick.bind(this, "organizations") }>Organizations</button>
         </div>
       </div>
     );
