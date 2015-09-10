@@ -19,13 +19,32 @@ class User < ActiveRecord::Base
     self.class.service(self)
   end
 
-  def commits
-    service.find_commits(self)
+  def stats
+    @stats ||= GithubStats.new(self.nickname)
   end
 
-  def latest_commit
-    all_commits = commits(self)
-    all_commits.first
+  def current_streak
+    stats.streak.count
+  end
+
+  def longest_streak
+    stats.longest_streak.count
+  end
+
+  def total_commits
+    stats.data.scores.reduce(:+)
+  end
+
+  def daily_commits
+    stats.data.today
+  end
+
+  def user_email
+    JSON.parse(email).first
+  end
+
+  def commits
+    service.find_commits(self)
   end
 
   def repos

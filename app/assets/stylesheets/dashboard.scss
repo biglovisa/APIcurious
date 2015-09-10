@@ -16,18 +16,14 @@
 }
 
 a.header-right-links {
-  color: white;
+  color: grey;
 }
 
 /*          Stats Bar */
 
-.top-column {
-  margin: 20px;
-  margin-bottom: 20px;
-}
-
 .btn.btn-default {
   background-color: rgba(255, 255, 255, 0.6);
+  font-size: 15px;
   font-weight: 300px;
 }
 
@@ -41,9 +37,28 @@ a.header-right-links {
 
 /*          Dashboard Content */
 
-.content {
-  background-color: rgba(255, 255, 255, 0.8);
-  color: black;
+.top-column {
+  margin: 20px;
+}
+
+.content a {
+  color: white;
+  text-shadow: 1px 1px grey;
+}
+
+.content, .table {
+  width:80%;
+  margin: auto;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  th, tr, td {
+    text-align: center;
+    border-bottom: 1px solid white;
+  }
+}
+
+.table {
+  width: 60%;
 }
 
 .follow-table {

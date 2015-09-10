@@ -5,8 +5,7 @@
 
     <div class="header-right pull-right">
       <%= link_to "Sign Out", logout_path, class: "header-right-links" %><br>
-      <%= link_to "latest commit", "#", class: "header-right-links" %>
-      <p>my latest commit was such a great one</p>
+      <p><%= current_user.user_email %></p>
     </div>
 
     <h1 class="page-header"><%= current_user.nickname %></h1>
