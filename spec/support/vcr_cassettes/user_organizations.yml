@@ -2,7 +2,127 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.github.com/users/user/orgs
+    uri: https://api.github.com/users/user/orgs?access_token=abcdef
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Hurley v0.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Thu, 10 Sep 2015 00:13:41 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '83'
+      Status:
+      - 401 Unauthorized
+      X-Github-Media-Type:
+      - github.v3
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '48'
+      X-Ratelimit-Reset:
+      - '1441847565'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - deny
+      Content-Security-Policy:
+      - default-src 'none'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Github-Request-Id:
+      - 4999852B:1A01:9E50B6B:55F0CB35
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: '{"message":"Bad credentials","documentation_url":"https://developer.github.com/v3"}'
+    http_version: 
+  recorded_at: Thu, 10 Sep 2015 00:13:42 GMT
+- request:
+    method: get
+    uri: https://api.github.com/users/applegrain/orgs?access_token=abcdef
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Hurley v0.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Thu, 10 Sep 2015 00:16:09 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '83'
+      Status:
+      - 401 Unauthorized
+      X-Github-Media-Type:
+      - github.v3
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '41'
+      X-Ratelimit-Reset:
+      - '1441847565'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - deny
+      Content-Security-Policy:
+      - default-src 'none'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Github-Request-Id:
+      - 4999852B:19FD:2DA7C39:55F0CBC9
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: '{"message":"Bad credentials","documentation_url":"https://developer.github.com/v3"}'
+    http_version: 
+  recorded_at: Thu, 10 Sep 2015 00:16:10 GMT
+- request:
+    method: get
+    uri: https://api.github.com/users/applegrain/orgs?access_token=809aaf5c01218fa70d7b118590afa975ddc125cf
     body:
       encoding: US-ASCII
       string: ''
@@ -21,25 +141,31 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Wed, 09 Sep 2015 21:59:10 GMT
+      - Thu, 10 Sep 2015 00:37:08 GMT
       Content-Type:
       - application/json; charset=utf-8
-      Content-Length:
-      - '2'
+      Transfer-Encoding:
+      - chunked
       Status:
       - 200 OK
       X-Ratelimit-Limit:
-      - '60'
+      - '5000'
       X-Ratelimit-Remaining:
-      - '8'
+      - '4992'
       X-Ratelimit-Reset:
-      - '1441836446'
+      - '1441848834'
       Cache-Control:
-      - public, max-age=60, s-maxage=60
+      - private, max-age=60, s-maxage=60
       Etag:
-      - '"98f0c1b396a4e5d54f4d5fe561d54b44"'
+      - W/"4f8ef8fee58340cab4a271a0beb8f4b9"
+      X-Oauth-Scopes:
+      - ''
+      X-Accepted-Oauth-Scopes:
+      - admin:org, read:org, repo, user, write:org
+      X-Oauth-Client-Id:
+      - bd0d0b7d623887f00eb3
       Vary:
-      - Accept
+      - Accept, Authorization, Cookie, X-GitHub-OTP
       - Accept-Encoding
       X-Github-Media-Type:
       - github.v3
@@ -57,16 +183,16 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       X-Github-Request-Id:
-      - 4999852B:19DB:A4F2005:55F0ABAE
+      - 4999852B:1647:898F59F:55F0D0B4
       Strict-Transport-Security:
       - max-age=31536000; includeSubdomains; preload
       X-Content-Type-Options:
       - nosniff
       X-Served-By:
-      - a7f8a126c9ed3f1c4715a34c0ddc7290
+      - a6882e5cd2513376cb9481dbcd83f3a2
     body:
-      encoding: UTF-8
-      string: "[]"
+      encoding: ASCII-8BIT
+      string: '[{"login":"turingschool","id":7934292,"url":"https://api.github.com/orgs/turingschool","repos_url":"https://api.github.com/orgs/turingschool/repos","events_url":"https://api.github.com/orgs/turingschool/events","members_url":"https://api.github.com/orgs/turingschool/members{/member}","public_members_url":"https://api.github.com/orgs/turingschool/public_members{/member}","avatar_url":"https://avatars.githubusercontent.com/u/7934292?v=3","description":""}]'
     http_version: 
-  recorded_at: Wed, 09 Sep 2015 21:59:11 GMT
+  recorded_at: Thu, 10 Sep 2015 00:37:09 GMT
 recorded_with: VCR 2.9.3

@@ -1,10 +1,11 @@
 require "vcr"
+require 'webmock/rspec'
 
 VCR.configure do |c|
-    c.hook_into                 :webmock
-    c.cassette_library_dir      = 'spec/support/vcr_cassettes'
-    c.configure_rspec_metadata!
-    c.default_cassette_options  = {:record => :new_episodes}
+  c.hook_into                 :webmock
+  c.cassette_library_dir      = 'spec/support/vcr_cassettes'
+  c.configure_rspec_metadata!
+  c.default_cassette_options  = {:record => :new_episodes}
 end
 
 RSpec.configure do |config|
@@ -19,22 +20,22 @@ RSpec.configure do |config|
   def user
     @user ||= User.new(provider: 'github',
                           uid: '12345',
-                          email: 'user@email.com',
-                          nickname: 'user',
+                          email: 'example@email.com',
+                          nickname: 'applegrain',
                           image_url: 'http://36.media.tumblr.com/tumblr_lqeoxdzT3M1r27575o1_500.jpg',
-                          token: 'abcdef')
+                          token: '809aaf5c01218fa70d7b118590afa975ddc125cf')
   end
 
   def login_user
     OmniAuth.config.test_mode = true
 
     OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new ({
-      'provider' => user.provider,
-      'uid'      => user.uid,
-      'token'    => user.token,
-      'info'     =>  {email: user.email,
-                      nickname: user.nickname,
-                      image_url: user.image_url}
+      'provider'    => user.provider,
+      'uid'         => user.uid,
+      'info'        => {email: user.email,
+                        nickname: user.nickname,
+                        image_url: user.image_url},
+      'credentials' => {token: user.token}
     })
   end
 
