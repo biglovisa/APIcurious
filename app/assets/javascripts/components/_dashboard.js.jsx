@@ -4,8 +4,8 @@ var Dashboard = React.createClass ({
   },
   render: function() {
     return (
-      <StatsBar following={ this.props.data.following }
-                followers={ this.props.data.followers }
+      <StatsBar following={ this.props.data.users }
+                followers={ this.props.data.users.followers }
                 starredRepos={ this.props.data.starredRepos }
                 organizations={this.props.data.organizations}
                 repositories={this.props.data.repositories}
@@ -32,7 +32,7 @@ var StatsBar = React.createClass ({
         Content = <UserDisplay key='followers' users={this.props.followers} />
         break;
       case 'following':
-        Content = <UserDisplay key='following' users={this.props.following} />
+        Content = <UserDisplayFollowing key='following' users={this.props.following} />
         break;
       case 'organizations':
         Content = <OrganizationsTable key='organizations' organizations={this.props.organizations} />
@@ -156,9 +156,41 @@ UserDisplay = React.createClass ({
           <h3>
             <a href={ user.html_url } >{ user.login }</a>
           </h3>
-          <h4 className="follow-status">
-            Follows you
-          </h4>
+        </div>
+      );
+    });
+    return (
+      <div className="follow-table">
+        { users }
+      </div>
+    );
+  }
+});
+
+var UserDisplayFollowing = React.createClass ({
+ getDefaultProps: function() {
+    return { users: [] }
+  },
+  render: function() {
+    var following = this.props.users.following
+    var followers = this.props.users.followers
+
+    var users = following.map(function(user, index) {
+      return (
+        <div
+          className="col-lg-4 col-sm-6 text-center"
+          key={ index }
+        >
+          <img
+            className="img-circle img-responsive img-center"
+            src={user.avatar_url.slice(0, -4)} />
+
+          <h3>
+            <a href={ user.html_url } >{ user.login }</a><br />
+            <small>
+              Placeholder
+            </small>
+          </h3>
         </div>
       );
     });

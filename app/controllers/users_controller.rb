@@ -16,8 +16,8 @@ class UsersController < ApplicationController
 
     @data = {
       user: @user,
-      following: @following,
-      followers: @followers,
+      users: { following: @following,
+               followers: @followers },
       starredRepos: @starred_repos,
       organizations: @organizations,
       repositories: @repositories,
