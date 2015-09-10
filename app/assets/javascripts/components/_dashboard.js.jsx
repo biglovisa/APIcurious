@@ -47,3 +47,38 @@ var StatsBar = React.createClass ({
     );
   }
 });
+
+var StarredRepos = React.createClass ({
+  getDefaultProps: function() {
+    return { starredRepos: [] };
+  },
+  render: function() {
+    var repos = this.props.starredRepos.map(function(repo, index) {
+      return (
+        <tr>
+          <td
+            key={ index }
+            className="dataRow"
+          >
+            { repo.full_name }
+          </td>
+        </tr>
+      )
+    });
+
+    return (
+      <div className="starredRepos">
+        <table className="table table-hover">
+          <thead>
+            <tr>
+              <th>repositories</th>
+            </tr>
+          </thead>
+          <tbody>
+            { repos }
+          </tbody>
+        </table>
+      </div>
+    );
+  }
+});
