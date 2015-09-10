@@ -15,9 +15,8 @@
   text-align: right;
 }
 
-a.header-right-links:hover {
-  color: yellow;
-  text-decoration: none;
+a.header-right-links {
+  color: white;
 }
 
 /*          Stats Bar */
@@ -26,14 +25,16 @@ a.header-right-links:hover {
 
 }
 
-.glyphicon.glyphicon-star {
-  color: yellow;
+.btn.btn-default {
+  background-color: rgba(255, 255, 255, 0.6);
+  font-weight: 300px;
 }
 
 /*          Dashboard Content */
 
-.starredRepos {
-  background-color: none;
+.content {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
 }
 
 .dataRow:hover {

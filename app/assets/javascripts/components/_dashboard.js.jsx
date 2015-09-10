@@ -42,22 +42,22 @@ var StatsBar = React.createClass ({
       <div className="top-column">
         <div className="btn-group btn-group-justified stats-bar" role="group" aria-label="...">
           <div className="btn-group" role="group">
-            <button type="button" className="btn btn-primary" key="starredRepos" onClick={ this.handleButtonClick.bind(this, "starredRepos") }>Starred Repos  <span className="glyphicon glyphicon-star"></span></button>
+            <button type="button" className="btn btn-default" key="starredRepos" onClick={ this.handleButtonClick.bind(this, "starredRepos") }>Starred Repos</button>
           </div>
           <div className="btn-group" role="group">
-            <button type="button" className="btn btn-primary" key="followers" onClick={ this.handleButtonClick.bind(this, "followers") }>Followers</button>
+            <button type="button" className="btn btn-default" key="followers" onClick={ this.handleButtonClick.bind(this, "followers") }>Followers</button>
           </div>
           <div className="btn-group" role="group">
-            <button type="button" className="btn btn-primary" key="following" onClick={ this.handleButtonClick.bind(this, "following") }>Following</button>
+            <button type="button" className="btn btn-default" key="following" onClick={ this.handleButtonClick.bind(this, "following") }>Following</button>
           </div>
           <div className="btn-group" role="group">
-            <button type="button" className="btn btn-primary" key="repositories" onClick={ this.handleButtonClick.bind(this, "repositories") }>Repositories</button>
+            <button type="button" className="btn btn-default" key="repositories" onClick={ this.handleButtonClick.bind(this, "repositories") }>Repositories</button>
           </div>
           <div className="btn-group" role="group">
-            <button type="button" className="btn btn-primary" key="commits" onClick={ this.handleButtonClick.bind(this, "commits") }>Commit History</button>
+            <button type="button" className="btn btn-default" key="commits" onClick={ this.handleButtonClick.bind(this, "commits") }>Commit History</button>
           </div>
           <div className="btn-group" role="group">
-            <button type="button" className="btn btn-primary" key="organizations" onClick={ this.handleButtonClick.bind(this, "organizations") }>Organizations</button>
+            <button type="button" className="btn btn-default" key="organizations" onClick={ this.handleButtonClick.bind(this, "organizations") }>Organizations</button>
           </div>
         </div>
 
