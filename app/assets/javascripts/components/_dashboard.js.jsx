@@ -37,28 +37,52 @@ var StatsBar = React.createClass ({
         break;
     }
 
+    var BUTTONS = [
+      {
+        key: 'starredRepos',
+        name: 'Starred Repos'
+      },
+      {
+        key: 'followers',
+        name: 'Followers'
+      },
+      {
+        key: 'following',
+        name: 'Following'
+      },
+      {
+        key: 'repositories',
+        name: 'Repositories'
+      },
+      {
+        key: 'commits',
+        name: 'Commit History'
+      },
+      {
+        key: 'organizations',
+        name: 'Organizations'
+      }
+    ];
+
+    var buttons = BUTTONS.map(function(button) {
+      return (
+        <div
+          className="btn-group"
+          role="group"
+        >
+          <button
+            type="button"
+            className="btn btn-default"
+            key={button.key} onClick={ this.handleButtonClick.bind(this, button.key) }>{button.name}</button>
+        </div>
+      );
+    }.bind(this));
+
     return (
 
       <div className="top-column">
         <div className="btn-group btn-group-justified stats-bar" role="group" aria-label="...">
-          <div className="btn-group" role="group">
-            <button type="button" className="btn btn-default" key="starredRepos" onClick={ this.handleButtonClick.bind(this, "starredRepos") }>Starred Repos</button>
-          </div>
-          <div className="btn-group" role="group">
-            <button type="button" className="btn btn-default" key="followers" onClick={ this.handleButtonClick.bind(this, "followers") }>Followers</button>
-          </div>
-          <div className="btn-group" role="group">
-            <button type="button" className="btn btn-default" key="following" onClick={ this.handleButtonClick.bind(this, "following") }>Following</button>
-          </div>
-          <div className="btn-group" role="group">
-            <button type="button" className="btn btn-default" key="repositories" onClick={ this.handleButtonClick.bind(this, "repositories") }>Repositories</button>
-          </div>
-          <div className="btn-group" role="group">
-            <button type="button" className="btn btn-default" key="commits" onClick={ this.handleButtonClick.bind(this, "commits") }>Commit History</button>
-          </div>
-          <div className="btn-group" role="group">
-            <button type="button" className="btn btn-default" key="organizations" onClick={ this.handleButtonClick.bind(this, "organizations") }>Organizations</button>
-          </div>
+          { buttons }
         </div>
 
         <div className="content">
@@ -117,19 +141,15 @@ UserDisplay = React.createClass ({
         >
           <img
             className="img-circle img-responsive img-center"
-            src="{user.image_url}"
+            src={user.avatar_url.slice(0, -4)}
           />
 
           <h3>
             {user.login}
-            <small>
-              Follows you
-            </small>
           </h3>
-
-          <p>
-            What does this team member to? Keep it short! This is also a great spot for social links!
-          </p>
+          <h4 className="follow-status">
+            Follows you
+          </h4>
         </div>
       );
     });
