@@ -1,3 +1,5 @@
+/*          Main */
+
 .dashboard-main {
   margin-top: 20px;
 }
@@ -17,3 +19,28 @@ a.header-right-links:hover {
   color: yellow;
   text-decoration: none;
 }
+
+/*          Stats Bar */
+
+.stats-bar {
+
+}
+
+.glyphicon.glyphicon-star {
+  color: yellow;
+}
+
+/*          Dashboard Content */
+
+.starredRepos {
+  background-color: none;
+}
+
+.dataRow:hover {
+  background-color: darkgrey;
+}
+
+.dataRow {
+}
+
+

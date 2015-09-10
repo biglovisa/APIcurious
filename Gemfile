@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.2.3'
 gem 'pg'
+gem 'react-rails'
 
 gem 'sass-rails', '>= 3.2'
 gem 'bootstrap-sass', '~> 3.3.5'
@@ -16,16 +17,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'figaro'
 gem 'omniauth-github'
 gem 'hurley'
-gem 'fakeweb'
 
 group :development, :test do
   gem 'pry-rails'
   gem 'binding_of_caller'
   gem 'launchy'
-
-  gem 'rspec-rails'
-  gem 'capybara'
-  gem 'vcr'
 
   gem 'codeclimate-test-reporter', require: nil
   gem 'simplecov'
@@ -34,3 +30,9 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
 end
 
+group :test do
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'vcr'
+  gem 'webmock'
+end

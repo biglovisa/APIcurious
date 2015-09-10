@@ -15,5 +15,13 @@ RSpec.describe "User visits the dashboard" do
         expect(page).to have_link "latest commit"
       end
     end
+
+    it "views their latest commit in the header" do
+      expect(current_path).to eq dashboard_path
+
+      within(".header-right") do
+        expect(page).to have_content ""
+      end
+    end
   end
 end

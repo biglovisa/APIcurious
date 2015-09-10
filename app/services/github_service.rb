@@ -1,21 +1,18 @@
 class GithubService
   attr_reader :client
-  def initialize
+  def initialize(user)
     @client = Hurley::Client.new("https://api.github.com")
+    client.query[:access_token] = user.token
   end
 
   def find_commits(user)
     repos = find_user_repos(user)
 
-    commits = repos.inject([]) do |commits, repo|
+    repo_commits = repos.inject([]) do |commits, repo|
       commits << parse(client.get("repos/#{user.nickname}/#{repo[:name]}/commits").body)
     end
 
-    # commits returns an array of arrays
-    # the repos with the commits nested within
-    # SHOULD THIS LOGIC HAPPEN HERE OR IN THE USER MODEL?
-
-    # display: get the calendar view with D3
+    format_commits(repo_commits)
   end
 
   def find_followers(user)
@@ -32,7 +29,6 @@ class GithubService
 
   def find_user_repos(user)
     parse(client.get("users/#{user.nickname}/repos").body)
-    # display: get all repos and by number of commits, display them in bubble diagram with D3
   end
 
   def find_user_organizations(user)
@@ -43,5 +39,13 @@ class GithubService
 
   def parse(response)
     JSON.parse(response, symbolize_names: true)
+  end
+
+  def format_commits(repos)
+    repos.map do |repo|
+      repo.map do |c|
+        c[:commit]
+      end
+    end.flatten
   end
 end
