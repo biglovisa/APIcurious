@@ -17,38 +17,53 @@ var StatsBar = React.createClass ({
     this.setState({activeButton: clicked});
   },
   render: function() {
+    var Content;
+
+    switch (this.state.activeButton) {
+      case 'starredRepos':
+        Content = <StarredReposTable key='dashboard-content-starred' starredRepos={this.props.starredRepos} />
+        break;
+      case 'followers':
+        Content = <FollowTable key='dashboard-content-followers' users={this.props.followers} />
+        break;
+      case 'following':
+        Content = <FollowTable key='dashboard-content-following' users={this.props.following} />
+        break;
+    }
+
     return (
+
       <div className="top-column">
         <div className="btn-group btn-group-justified stats-bar" role="group" aria-label="...">
           <div className="btn-group" role="group">
-            <button type="button" className="btn btn-primary" onClick={ this.handleButtonClick.bind(this, "starredRepos") }>Starred Repos  <span className="glyphicon glyphicon-star"></span></button>
+            <button type="button" className="btn btn-primary" key="starredRepos" onClick={ this.handleButtonClick.bind(this, "starredRepos") }>Starred Repos  <span className="glyphicon glyphicon-star"></span></button>
           </div>
           <div className="btn-group" role="group">
-            <button type="button" className="btn btn-primary" onClick={ this.handleButtonClick.bind(this, "followers") }>Followers</button>
+            <button type="button" className="btn btn-primary" key="followers" onClick={ this.handleButtonClick.bind(this, "followers") }>Followers</button>
           </div>
           <div className="btn-group" role="group">
-            <button type="button" className="btn btn-primary" onClick={ this.handleButtonClick.bind(this, "following") }>Following</button>
+            <button type="button" className="btn btn-primary" key="following" onClick={ this.handleButtonClick.bind(this, "following") }>Following</button>
           </div>
           <div className="btn-group" role="group">
-            <button type="button" className="btn btn-primary" onClick={ this.handleButtonClick.bind(this, "repositories") }>Repositories</button>
+            <button type="button" className="btn btn-primary" key="repositories" onClick={ this.handleButtonClick.bind(this, "repositories") }>Repositories</button>
           </div>
           <div className="btn-group" role="group">
-            <button type="button" className="btn btn-primary" onClick={ this.handleButtonClick.bind(this, "commits") }>Commit History</button>
+            <button type="button" className="btn btn-primary" key="commits" onClick={ this.handleButtonClick.bind(this, "commits") }>Commit History</button>
           </div>
           <div className="btn-group" role="group">
-            <button type="button" className="btn btn-primary" onClick={ this.handleButtonClick.bind(this, "organizations") }>Organizations</button>
+            <button type="button" className="btn btn-primary" key="organizations" onClick={ this.handleButtonClick.bind(this, "organizations") }>Organizations</button>
           </div>
         </div>
 
         <div className="content">
-          <StarredRepos starredRepos={this.props.starredRepos} />
+          { Content }
         </div>
       </div>
     );
   }
 });
 
-var StarredRepos = React.createClass ({
+var StarredReposTable = React.createClass ({
   getDefaultProps: function() {
     return { starredRepos: [] };
   },
@@ -78,6 +93,43 @@ var StarredRepos = React.createClass ({
             { repos }
           </tbody>
         </table>
+      </div>
+    );
+  }
+});
+
+FollowTable = React.createClass ({
+  getDefaultProps: function() {
+    return { users: [] }
+  },
+  render: function() {
+    var users = this.props.users.map(function(user, index) {
+      return (
+        <div
+          className="col-lg-4 col-sm-6 text-center"
+          key={ index }
+        >
+          <img
+            className="img-circle img-responsive img-center"
+            src="{user.image_url}"
+          />
+
+          <h3>
+            {user.login}
+            <small>
+              Follows you
+            </small>
+          </h3>
+
+          <p>
+            What does this team member to? Keep it short! This is also a great spot for social links!
+          </p>
+        </div>
+      );
+    });
+    return (
+      <div className="follow-table">
+        { users }
       </div>
     );
   }
