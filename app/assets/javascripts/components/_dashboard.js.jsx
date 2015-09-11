@@ -7,16 +7,16 @@ var Dashboard = React.createClass ({
       <div>
         <div className='col-lg-6'>
           <StatsBar key='statsbar'
-                    starredRepos={ this.props.data.starredRepos }
-                    organizations={this.props.data.organizations}
-                    repositories={this.props.data.repositories}
-                    commitHistory={this.props.data.commit_history} />
+                    starredRepos= { this.props.data.starredRepos }
+                    organizations={ this.props.data.organizations }
+                    repositories= { this.props.data.repositories }
+                    commitHistory={ this.props.data.commit_history } />
         </div>
         <div className='col-lg-6'>
           <UsersBar key='usersbar'
-                    following={ this.props.data.users }
+                    following={ this.props.data.users.following }
                     followers={ this.props.data.users.followers }
-                    csrf={this.props.data.csrf_token}
+                    feed={ this.props.data.received_events }
                     currentUser={this.props.data.user} />
         </div>
       </div>
@@ -99,18 +99,24 @@ var StatsBar = React.createClass ({
 
 var UsersBar = React.createClass ({
   getInitialState: function() {
-    return { activeButton: 'following'}
+    return { activeButton: 'following', following: this.props.following }
   },
   handleButtonClick: function(clicked) {
     this.setState({activeButton: clicked});
   },
-  handleUnfollow: function(user) {
-    console.log(this.props.currentUser);
+  handleUnfollow: function(userToRemove) {
+    var following = this.state.following;
+
     $.ajax({
-      url: 'https://api.github.com/user/following/' + user.login,
+      url: 'https://api.github.com/user/following/' + userToRemove.login,
       type: "DELETE",
       headers: {"Authorization": "token " + this.props.currentUser.token},
       success: function(response) {
+        // TODO: refresh child with updated list of following
+
+        // updatedFollowing = following.filter(function(user) {
+        //   return user !== userToRemove;
+        // });
       }, error: function(xhr) {
         console.log("You messed up.");
       }
@@ -125,7 +131,13 @@ var UsersBar = React.createClass ({
         Content = <Followers key='followers' users={this.props.followers} />
         break;
       case 'following':
-        Content = <Following users={this.props.following} onUnfollow={this.handleUnfollow} />
+        Content = <Following following={this.props.following} onUnfollow={this.handleUnfollow} />
+        break;
+      case 'feed':
+        Content = <Feed feed={this.props.feed} />
+        break;
+      case 'search':
+        Content = <Search />
         break;
     }
 
@@ -137,6 +149,14 @@ var UsersBar = React.createClass ({
       {
         identifier: 'following',
         name: 'Following'
+      },
+      {
+        identifier: 'feed',
+        name: 'Feed'
+      },
+      {
+        identifier: 'search',
+        name: 'Search'
       }
     ]
 
@@ -190,7 +210,7 @@ var StarredReposTable = React.createClass ({
 
     return (
       <div className='starredRepos'>
-        <table className='table table-hover'>
+        <table className='table'>
           <thead>
             <tr>
               <th>starred repositories</th>
@@ -240,7 +260,7 @@ var Following = React.createClass ({
     return { users: [] }
   },
   render: function() {
-    var following = this.props.users.following
+    var following = this.props.following
 
     var users = following.map(function(user, index) {
       return (<FollowingTableRow user={user} key={index} onUnfollow={this.props.onUnfollow} />);
@@ -254,6 +274,9 @@ var Following = React.createClass ({
 });
 
 var FollowingTableRow = React.createClass ({
+  getInitialState: function() {
+    return { followLink: 'Unfollow' }
+  },
   handleUnfollow: function() {
     this.props.onUnfollow(this.props.user)
   },
@@ -283,13 +306,59 @@ var FollowingTableRow = React.createClass ({
   }
 });
 
+var Feed = React.createClass ({
+  render: function() {
+    rows = this.props.feed.map(function(activity, index) {
+      return (
+        <tr>
+          <td
+            key={ index }
+            className='dataRow'
+          >
+
+            { activity[1] } created <a href={ activity[0] }>{ activity[2] }
+            </a>
+          </td>
+        </tr>
+      );
+    });
+
+    return (
+      <div className='orgs-table'>
+        <table className='table'>
+          <thead>
+            <tr>
+              <th>recent acitivites</th>
+            </tr>
+          </thead>
+          <tbody>
+            { rows }
+          </tbody>
+        </table>
+      </div>
+    );
+  }
+});
+
+var Search = React.createClass ({
+  render: function() {
+    return (
+      <form action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" /><br />
+        <div class="form-group dropdown-toggle">
+          <input type="search" name="searchfield" id="searchfield" />
+          <button name="button" type="submit" method="get" class="btn btn-primary">Search</button><br />
+        </div>
+      </form>
+    );
+  }
+});
+
 var OrganizationsTable = React.createClass ({
   getDefaultProps: function() {
     return { organizations: [] }
   },
   render: function() {
     var orgs = this.props.organizations.map(function(org, index) {
-      console.log(org);
       return (
         <tr>
           <td
@@ -307,7 +376,7 @@ var OrganizationsTable = React.createClass ({
     });
     return (
       <div className='orgs-table'>
-        <table className='table table-hover'>
+        <table className='table'>
           <thead>
             <tr>
               <th>organizations</th>
@@ -342,7 +411,7 @@ var RepositoriesTable = React.createClass ({
     });
     return (
       <div className='repos-table'>
-        <table className='table table-hover'>
+        <table className='table'>
           <thead>
             <tr>
               <th>repositories</th>
@@ -393,7 +462,7 @@ var CommitStatsTable = React.createClass ({
 
     return (
       <div className='commits-table'>
-        <table className='table table-hover'>
+        <table className='table'>
           <thead>
             <tr>
               <th>commit history</th>

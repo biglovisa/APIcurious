@@ -26,10 +26,6 @@ a.header-right-links {
   font-weight: 300px;
 }
 
-.btn.btn-default:hover {
-  background-color: darkgrey;
-}
-
 .selected-button {
   background-color: darkgrey;
 }
@@ -38,12 +34,11 @@ a.header-right-links {
 
 .top-column {
   margin: 20px;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .content a {
   color: white;
-  text-shadow: 1px 1px grey;
 }
 
 .content, .table {
@@ -69,11 +64,8 @@ a.header-right-links {
   font-weight: 200;
 }
 
-.dataRow:hover {
-  background-color: dark;
-}
-
-.dataRow {
+.dataRow a {
+  color: grey;
 }
 
 .img-circle.img-responsive.img-center {
@@ -91,4 +83,8 @@ a.header-right-links {
 a.unfollow {
   color: grey;
   text-shadow: none;
+}
+
+#searchfield {
+  color: black;
 }
