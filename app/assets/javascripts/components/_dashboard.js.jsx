@@ -96,8 +96,9 @@ var UsersBar = React.createClass ({
   handleButtonClick: function(clicked) {
     this.setState({activeButton: clicked});
   },
-  handleUnfollow: function(id) {
-    console.log("unfollow in users bar");
+  handleUnfollow: function(user) {
+    // make ajax call to API and unfollow the user
+    console.log(user);
   },
   render: function() {
     var Content;
@@ -107,7 +108,7 @@ var UsersBar = React.createClass ({
         Content = <Followers key='followers' users={this.props.followers} />
         break;
       case 'following':
-        Content = <Following users={this.props.following} />
+        Content = <Following users={this.props.following} onUnfollow={this.handleUnfollow} />
         break;
     }
 
@@ -132,7 +133,8 @@ var UsersBar = React.createClass ({
           <button
             type='button'
             className='btn btn-primary'
-            onClick={ this.handleButtonClick.bind(this, button.identifier) }>{button.name}</button>
+            onClick={ this.handleButtonClick.bind(this, button.identifier) }>{button.name}
+          </button>
         </div>
       );
     }.bind(this));
@@ -220,42 +222,47 @@ var Following = React.createClass ({
  getDefaultProps: function() {
     return { users: [] }
   },
-  handleUnfollow: function() {
-    console.log("ccc");
-  },
   render: function() {
     var following = this.props.users.following
 
     var users = following.map(function(user, index) {
-      return (
-        <div
-          className='col-lg-4 col-sm-6 text-center'
-          key={ 'user-' + index }
-        >
-          <img
-            className='img-circle img-responsive img-center'
-            src={user.avatar_url.slice(0, -4)} />
-
-          <h3>
-            <a href={ user.html_url } >{ user.login }</a><br />
-              <small>
-                <button
-                  type='button'
-                  className='btn btn-danger'
-                  onClick={this.handleUnfollow}
-                >
-                Delete
-              </button>
-            </small>
-          </h3>
-        </div>
-      );
-    });
+      return (<FollowingTableRow user={user} key={index} onUnfollow={this.props.onUnfollow} />);
+    }.bind(this));
     return (
       <div className='follow-table'>
         { users }
       </div>
     );
+  }
+});
+
+var FollowingTableRow = React.createClass ({
+  handleUnfollow: function() {
+    this.props.onUnfollow(this.props.user)
+  },
+  render: function() {
+    return (
+      <div
+        className='col-lg-4 col-sm-6 text-center'
+        key={ 'user-' + this.props.index }
+      >
+        <img
+          className='img-circle img-responsive img-center'
+          src={this.props.user.avatar_url.slice(0, -4)} />
+
+        <h3>
+          <a href={ this.props.user.html_url } >{ this.props.user.login }</a><br />
+            <small>
+            <a
+              className="unfollow"
+              onClick={this.handleUnfollow}
+            >
+              Unfollow
+            </a>
+          </small>
+        </h3>
+      </div>
+    )
   }
 });
 
