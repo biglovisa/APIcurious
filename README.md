@@ -1,7 +1,7 @@
 ## APIcurious
 ### OtherHub
 
-[![Stories in Ready](https://badge.waffle.io/applegrain/dinners_ready.svg?label=ready&title=Ready)](http://waffle.io/applegrain/APIcurious) [![Build Status](https://travis-ci.org/applegrain/APIcurious.svg)](https://travis-ci.org/applegrain/APIcurious) [![Code Climate](https://codeclimate.com/github/applegrain/APIcurious/badges/gpa.svg)](https://codeclimate.com/github/applegrain/APIcurious) [![Test Coverage](https://codeclimate.com/github/applegrain/APIcurious/badges/coverage.svg)](https://codeclimate.com/github/applegrain/APIcurious/coverage)
+[![Stories in Ready](https://badge.waffle.io/applegrain/dinners_ready.svg?label=ready&title=Ready)](http://waffle.io/applegrain/APIcurious) [![Code Climate](https://codeclimate.com/github/applegrain/APIcurious/badges/gpa.svg)](https://codeclimate.com/github/applegrain/APIcurious)
 
 [Project Outline](https://github.com/turingschool/lesson_plans/blob/master/ruby_03-professional_rails_applications/apicurious.md#technical-expectations) | [Heroku](https://otherhub.herokuapp.com)
 
