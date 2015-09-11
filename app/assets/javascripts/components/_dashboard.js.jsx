@@ -1,22 +1,53 @@
+// Dashboard
+
+  // statsbar
+      // starred
+      // user repos
+      // organizations
+      // commit history
+            // user repos, starred and organizations can be same table
+
+  // users bar
+    // followers
+    // following
+    // find?
+    // recent activities?
+            // status is either "follows/doesn't follow you" or "unfollow"
+
+    // priority:
+        // separate the two bars
+        // remove styling from tables
+        // 45 min on jQuery
+        // recent activities from followers
+        // get if user is following or not. probably easiest in the model
+        // unfollow a user
+        // search user and follow
+
 var Dashboard = React.createClass ({
   getDefaultProps: function() {
     return { data: {} }
   },
   render: function() {
     return (
-      <StatsBar following={ this.props.data.users }
-                followers={ this.props.data.users.followers }
-                starredRepos={ this.props.data.starredRepos }
-                organizations={this.props.data.organizations}
-                repositories={this.props.data.repositories}
-                commitHistory={this.props.data.commit_history} />
+      <div>
+        <div className="col-lg-6">
+          <StatsBar starredRepos={ this.props.data.starredRepos }
+                    organizations={this.props.data.organizations}
+                    repositories={this.props.data.repositories}
+                    commitHistory={this.props.data.commit_history} />
+        </div>
+        <div className="col-lg-6">
+          <UsersBar following={ this.props.data.users }
+                    followers={ this.props.data.users.followers } />
+        </div>
+      </div>
     );
   }
 });
 
 var StatsBar = React.createClass ({
   getInitialState: function() {
-    return { activeButton: 'starred' };
+    return { activeButton: 'commits' };
   },
   handleButtonClick: function(clicked) {
     this.setState({activeButton: clicked});
@@ -27,12 +58,6 @@ var StatsBar = React.createClass ({
     switch (this.state.activeButton) {
       case 'starredRepos':
         Content = <StarredReposTable key='starred' starredRepos={this.props.starredRepos} />
-        break;
-      case 'followers':
-        Content = <UserDisplay key='followers' users={this.props.followers} />
-        break;
-      case 'following':
-        Content = <UserDisplayFollowing key='following' users={this.props.following} />
         break;
       case 'organizations':
         Content = <OrganizationsTable key='organizations' organizations={this.props.organizations} />
@@ -49,14 +74,6 @@ var StatsBar = React.createClass ({
       {
         key: 'starredRepos',
         name: 'Starred Repos'
-      },
-      {
-        key: 'followers',
-        name: 'Followers'
-      },
-      {
-        key: 'following',
-        name: 'Following'
       },
       {
         key: 'repositories',
@@ -88,13 +105,71 @@ var StatsBar = React.createClass ({
     }.bind(this));
 
     return (
-
       <div className="top-column">
         <div className="btn-group btn-group-justified stats-bar" role="group" aria-label="...">
           { buttons }
         </div>
 
-        <div className="content" id="accordion">
+        <div className="content">
+          { Content }
+        </div>
+      </div>
+    );
+  }
+});
+
+var UsersBar = React.createClass ({
+  getInitialState: function() {
+    return { activeButton: 'following'}
+  },
+  handleButtonClick: function(clicked) {
+    this.setState({activeButton: clicked});
+  },
+  render: function() {
+    var Content;
+
+    switch (this.state.activeButton) {
+      case 'followers':
+        Content = <UserDisplay key='followers' users={this.props.followers} />
+        break;
+      case 'following':
+        Content = <UserDisplayFollowing key='following' users={this.props.following} />
+        break;
+    }
+
+    var BUTTONS = [
+      {
+        key: 'followers',
+        name: 'Followers'
+      },
+      {
+        key: 'following',
+        name: 'Following'
+      }
+    ]
+
+    var buttons = BUTTONS.map(function(button, index) {
+      return (
+        <div
+          className="btn-group"
+          role="group"
+        >
+          <button
+            type="button"
+            className="btn btn-default"
+            key={ button.name }
+            onClick={ this.handleButtonClick.bind(this, button.key) }>{button.name}</button>
+        </div>
+      );
+    }.bind(this));
+
+    return (
+      <div className="top-column">
+        <div className="btn-group btn-group-justified stats-bar" role="group" aria-label="...">
+          { buttons }
+        </div>
+
+        <div className="content">
           { Content }
         </div>
       </div>
