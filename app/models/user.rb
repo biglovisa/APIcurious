@@ -39,10 +39,6 @@ class User < ActiveRecord::Base
     stats.data.today
   end
 
-  def user_email
-    JSON.parse(email).first
-  end
-
   def commits
     service.find_commits(self)
   end

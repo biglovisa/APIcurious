@@ -6,10 +6,18 @@ var Dashboard = React.createClass ({
     return (
       <div>
         <div className='col-lg-6'>
-          <StatsBar key='statsbar' starredRepos={ this.props.data.starredRepos } organizations={this.props.data.organizations} repositories={this.props.data.repositories} commitHistory={this.props.data.commit_history} />
+          <StatsBar key='statsbar'
+                    starredRepos={ this.props.data.starredRepos }
+                    organizations={this.props.data.organizations}
+                    repositories={this.props.data.repositories}
+                    commitHistory={this.props.data.commit_history} />
         </div>
         <div className='col-lg-6'>
-          <UsersBar key='usersbar' following={ this.props.data.users } followers={ this.props.data.users.followers } />
+          <UsersBar key='usersbar'
+                    following={ this.props.data.users }
+                    followers={ this.props.data.users.followers }
+                    csrf={this.props.data.csrf_token}
+                    currentUser={this.props.data.user} />
         </div>
       </div>
     );
@@ -97,8 +105,17 @@ var UsersBar = React.createClass ({
     this.setState({activeButton: clicked});
   },
   handleUnfollow: function(user) {
-    // make ajax call to API and unfollow the user
-    console.log(user);
+    console.log(this.props.currentUser);
+    $.ajax({
+      url: 'https://api.github.com/user/following/' + user.login,
+      type: "DELETE",
+      headers: {"Authorization": "token " + this.props.currentUser.token},
+      success: function(response) {
+      }, error: function(xhr) {
+        console.log("You messed up.");
+      }
+    });
+
   },
   render: function() {
     var Content;
