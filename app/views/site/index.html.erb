@@ -2,15 +2,15 @@
 <div class="container main">
 <div class="row">
     <div class="col-lg-12">
-        <h1 class="title">Otherhub</h1>
+        <h1 class="title">otherhub</h1>
+    </div>
+    <div class="row contact">
+        <%= link_to "repository", "http://github.com/applegrain/APIcurious" %>
+        <%= icon('github', class: "github-icon") %>
+        <%= link_to "contact", "http://lovisa.io" %>
     </div>
     <div class="login-button">
         <%= link_to "Sign in with GitHub", login_path, class: "btn btn-lg btn-default" %>
     </div>
 </div>
 
-<div class="row contact">
-    <%= link_to "Repository", "http://github.com/applegrain/APIcurious" %>
-    <%= icon('github', class: "github-icon") %>
-    <%= link_to "Contact", "http://lovisa.io" %>
-</div>

@@ -15,9 +15,6 @@
             // status is either "follows/doesn't follow you" or "unfollow"
 
     // priority:
-        // separate the two bars
-        // remove styling from tables
-        // 45 min on jQuery
         // recent activities from followers
         // get if user is following or not. probably easiest in the model
         // unfollow a user
@@ -97,8 +94,8 @@ var StatsBar = React.createClass ({
         >
           <button
             type="button"
-            className="btn btn-default"
-            key={ button.name }
+            className="btn btn-primary"
+            key={ index }
             onClick={ this.handleButtonClick.bind(this, button.key) }>{button.name}</button>
         </div>
       );
@@ -156,7 +153,7 @@ var UsersBar = React.createClass ({
         >
           <button
             type="button"
-            className="btn btn-default"
+            className="btn btn-primary"
             key={ button.name }
             onClick={ this.handleButtonClick.bind(this, button.key) }>{button.name}</button>
         </div>
@@ -200,7 +197,7 @@ var StarredReposTable = React.createClass ({
         <table className="table table-hover">
           <thead>
             <tr>
-              <th>repositories</th>
+              <th>starred repositories</th>
             </tr>
           </thead>
           <tbody>
