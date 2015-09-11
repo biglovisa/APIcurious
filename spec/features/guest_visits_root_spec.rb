@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe "Guest visits root page", type: :feature do
-  context "a guest user" do
+  xcontext "a guest user" do
     it "visits the root" do
       visit root_path
 

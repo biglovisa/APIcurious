@@ -1,25 +1,3 @@
-// Dashboard
-
-  // statsbar
-      // starred
-      // user repos
-      // organizations
-      // commit history
-            // user repos, starred and organizations can be same table
-
-  // users bar
-    // followers
-    // following
-    // find?
-    // recent activities?
-            // status is either "follows/doesn't follow you" or "unfollow"
-
-    // priority:
-        // recent activities from followers
-        // get if user is following or not. probably easiest in the model
-        // unfollow a user
-        // search user and follow
-
 var Dashboard = React.createClass ({
   getDefaultProps: function() {
     return { data: {} }
@@ -27,14 +5,16 @@ var Dashboard = React.createClass ({
   render: function() {
     return (
       <div>
-        <div className="col-lg-6">
-          <StatsBar starredRepos={ this.props.data.starredRepos }
+        <div className='col-lg-6'>
+          <StatsBar key='statsbar'
+                    starredRepos={ this.props.data.starredRepos }
                     organizations={this.props.data.organizations}
                     repositories={this.props.data.repositories}
                     commitHistory={this.props.data.commit_history} />
         </div>
-        <div className="col-lg-6">
-          <UsersBar following={ this.props.data.users }
+        <div className='col-lg-6'>
+          <UsersBar key='usersbar'
+                    following={ this.props.data.users }
                     followers={ this.props.data.users.followers } />
         </div>
       </div>
@@ -89,12 +69,12 @@ var StatsBar = React.createClass ({
     var buttons = BUTTONS.map(function(button, index) {
       return (
         <div
-          className="btn-group"
-          role="group"
+          className='btn-group'
+          role='group'
         >
           <button
-            type="button"
-            className="btn btn-primary"
+            type='button'
+            className='btn btn-primary'
             key={ index }
             onClick={ this.handleButtonClick.bind(this, button.key) }>{button.name}</button>
         </div>
@@ -102,12 +82,12 @@ var StatsBar = React.createClass ({
     }.bind(this));
 
     return (
-      <div className="top-column">
-        <div className="btn-group btn-group-justified stats-bar" role="group" aria-label="...">
+      <div className='top-column'>
+        <div className='btn-group btn-group-justified stats-bar' role='group' aria-label='...'>
           { buttons }
         </div>
 
-        <div className="content">
+        <div className='content'>
           { Content }
         </div>
       </div>
@@ -148,12 +128,12 @@ var UsersBar = React.createClass ({
     var buttons = BUTTONS.map(function(button, index) {
       return (
         <div
-          className="btn-group"
-          role="group"
+          className='btn-group'
+          role='group'
         >
           <button
-            type="button"
-            className="btn btn-primary"
+            type='button'
+            className='btn btn-primary'
             key={ button.name }
             onClick={ this.handleButtonClick.bind(this, button.key) }>{button.name}</button>
         </div>
@@ -161,12 +141,12 @@ var UsersBar = React.createClass ({
     }.bind(this));
 
     return (
-      <div className="top-column">
-        <div className="btn-group btn-group-justified stats-bar" role="group" aria-label="...">
+      <div className='top-column'>
+        <div className='btn-group btn-group-justified stats-bar' role='group' aria-label='...'>
           { buttons }
         </div>
 
-        <div className="content">
+        <div className='content'>
           { Content }
         </div>
       </div>
@@ -184,7 +164,7 @@ var StarredReposTable = React.createClass ({
         <tr>
           <td
             key={ index }
-            className="dataRow"
+            className='dataRow'
           >
             <a href={ repo.html_url } >{ repo.full_name }</a>
           </td>
@@ -193,8 +173,8 @@ var StarredReposTable = React.createClass ({
     });
 
     return (
-      <div className="starredRepos">
-        <table className="table table-hover">
+      <div className='starredRepos'>
+        <table className='table table-hover'>
           <thead>
             <tr>
               <th>starred repositories</th>
@@ -217,11 +197,11 @@ UserDisplay = React.createClass ({
     var users = this.props.users.map(function(user, index) {
       return (
         <div
-          className="col-lg-4 col-sm-6 text-center"
+          className='col-lg-4 col-sm-6 text-center'
           key={ index }
         >
           <img
-            className="img-circle img-responsive img-center"
+            className='img-circle img-responsive img-center'
             src={user.avatar_url.slice(0, -4)}
           />
 
@@ -232,7 +212,7 @@ UserDisplay = React.createClass ({
       );
     });
     return (
-      <div className="follow-table">
+      <div className='follow-table'>
         { users }
       </div>
     );
@@ -243,6 +223,9 @@ var UserDisplayFollowing = React.createClass ({
  getDefaultProps: function() {
     return { users: [] }
   },
+  handleUnfollow: function() {
+    console.log("ccc");
+  },
   render: function() {
     var following = this.props.users.following
     var followers = this.props.users.followers
@@ -250,24 +233,30 @@ var UserDisplayFollowing = React.createClass ({
     var users = following.map(function(user, index) {
       return (
         <div
-          className="col-lg-4 col-sm-6 text-center"
-          key={ index }
+          className='col-lg-4 col-sm-6 text-center'
+          key={ 'user-' + index }
         >
           <img
-            className="img-circle img-responsive img-center"
+            className='img-circle img-responsive img-center'
             src={user.avatar_url.slice(0, -4)} />
 
           <h3>
             <a href={ user.html_url } >{ user.login }</a><br />
-            <small>
-              Placeholder
+              <small>
+                <button
+                  type="button"
+                  className="btn btn-danger"
+                  onClick={this.handleUnfollow}
+                >
+                Delete
+              </button>
             </small>
           </h3>
         </div>
       );
     });
     return (
-      <div className="follow-table">
+      <div className='follow-table'>
         { users }
       </div>
     );
@@ -285,7 +274,7 @@ var OrganizationsTable = React.createClass ({
         <tr>
           <td
             key={ index }
-            className="dataRow"
+            className='dataRow'
           >
             <a
               href={ org.url }
@@ -297,8 +286,8 @@ var OrganizationsTable = React.createClass ({
       );
     });
     return (
-      <div className="orgs-table">
-        <table className="table table-hover">
+      <div className='orgs-table'>
+        <table className='table table-hover'>
           <thead>
             <tr>
               <th>organizations</th>
@@ -324,7 +313,7 @@ var RepositoriesTable = React.createClass ({
         <tr>
           <td
             key={ index }
-            className="dataRow"
+            className='dataRow'
           >
             <a href={ repo.html_url } >{ repo.full_name }</a>
           </td>
@@ -332,8 +321,8 @@ var RepositoriesTable = React.createClass ({
       );
     });
     return (
-      <div className="repos-table">
-        <table className="table table-hover">
+      <div className='repos-table'>
+        <table className='table table-hover'>
           <thead>
             <tr>
               <th>repositories</th>
@@ -357,15 +346,15 @@ var CommitStatsTable = React.createClass ({
       },
       {
         data: this.props.commitHistory.current_streak,
-        name: "Current Streak"
+        name: 'Current Streak'
       },
       {
         data: this.props.commitHistory.longest_streak,
-        name: "Longest Streak"
+        name: 'Longest Streak'
       },
       {
         data: this.props.commitHistory.total_commits,
-        name: "Total contributions"
+        name: 'Total contributions'
       }
     ]
 
@@ -373,18 +362,18 @@ var CommitStatsTable = React.createClass ({
       return (
         <tr>
           <td
-            key={ index }
-            className="dataRow"
+            key={row.id}
+            className='dataRow'
           >
-            {row.name} <span className="badge pull-right">{row.data}</span>
+            {row.name} <span className='badge pull-right'>{row.data}</span>
           </td>
         </tr>
       );
     });
 
     return (
-      <div className="commits-table">
-        <table className="table table-hover">
+      <div className='commits-table'>
+        <table className='table table-hover'>
           <thead>
             <tr>
               <th>commit history</th>

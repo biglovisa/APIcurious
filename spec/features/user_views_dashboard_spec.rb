@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe "User visits the dashboard" do
-  context "a logged in user" do
+  xcontext "a logged in user" do
     before(:each) do
       login_user
       visit root_path

@@ -47,4 +47,7 @@ RSpec.describe "the GitHub API", type: :request do
       expect(service.count).to eq 1
     end
   end
+
+  it "can follow a user" do
+  end
 end

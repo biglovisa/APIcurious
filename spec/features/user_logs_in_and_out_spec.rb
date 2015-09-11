@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe "User logs in", type: :feature do
-  context "A user with a github account" do
+  xcontext "A user with a github account" do
     it "logs in" do
       visit root_path
       login_user
