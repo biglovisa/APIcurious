@@ -6,7 +6,8 @@
 [Project Outline](https://github.com/turingschool/lesson_plans/blob/master/ruby_03-professional_rails_applications/apicurious.md#technical-expectations) | [Heroku](https://otherhub.herokuapp.com)
 
 This is the first individual project of Module 3 at the Turing School. Students have to
-use an API, in this case GitHub, to build a clone of said platform.
+use an API, in this case GitHub, to build a clone of said platform. The backend is Rails and
+the frontend is built using React.js.
 
 #### Learning Goals
 
