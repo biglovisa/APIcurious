@@ -14,10 +14,10 @@ var Dashboard = React.createClass ({
         </div>
         <div className='col-lg-6'>
           <UsersBar key='usersbar'
-                    following={ this.props.data.users.following }
-                    followers={ this.props.data.users.followers }
-                    feed={ this.props.data.received_events }
-                    currentUser={this.props.data.user} />
+                    following=  { this.props.data.users.following }
+                    followers=  { this.props.data.users.followers }
+                    feed=       { this.props.data.received_events }
+                    currentUser={ this.props.data.user } />
         </div>
       </div>
     );
@@ -29,23 +29,23 @@ var StatsBar = React.createClass ({
     return { activeButton: 'commits' };
   },
   handleButtonClick: function(clicked) {
-    this.setState({activeButton: clicked});
+    this.setState({ activeButton: clicked });
   },
   render: function() {
     var Content;
 
     switch (this.state.activeButton) {
       case 'starredRepos':
-        Content = <StarredReposTable key='starred' starredRepos={this.props.starredRepos} />
+        Content = <StarredReposTable key='starred' starredRepos={ this.props.starredRepos } />
         break;
       case 'organizations':
-        Content = <OrganizationsTable key='organizations' organizations={this.props.organizations} />
+        Content = <OrganizationsTable key='organizations' organizations={ this.props.organizations } />
         break;
       case 'repositories':
-        Content = <RepositoriesTable key='repositories' repositories={this.props.repositories} />
+        Content = <RepositoriesTable key='repositories' repositories={ this.props.repositories } />
         break;
       case 'commits':
-        Content = <CommitStatsTable key='commits' commitHistory={this.props.commitHistory} />
+        Content = <CommitStatsTable key='commits' commitHistory={ this.props.commitHistory } />
         break;
     }
 
@@ -73,12 +73,12 @@ var StatsBar = React.createClass ({
         <div
           className='btn-group'
           role='group'
-          key={index}
+          key={ index }
         >
           <button
             type='button'
             className='btn btn-primary'
-            onClick={this.handleButtonClick.bind(this, button.identifier) }>{button.name}</button>
+            onClick={ this.handleButtonClick.bind(this, button.identifier) }>{ button.name }</button>
         </div>
       );
     }.bind(this));
@@ -102,42 +102,50 @@ var UsersBar = React.createClass ({
     return { activeButton: 'following', following: this.props.following }
   },
   handleButtonClick: function(clicked) {
-    this.setState({activeButton: clicked});
+    this.setState({ activeButton: clicked });
   },
-  handleUnfollow: function(userToRemove) {
+  handleUnfollow: function(userToUnfollow) {
     var following = this.state.following;
 
     $.ajax({
-      url: 'https://api.github.com/user/following/' + userToRemove.login,
+      url: 'https://api.github.com/user/following/' + userToUnfollow.login,
       type: "DELETE",
       headers: {"Authorization": "token " + this.props.currentUser.token},
       success: function(response) {
         // TODO: refresh child with updated list of following
 
-        // updatedFollowing = following.filter(function(user) {
-        //   return user !== userToRemove;
-        // });
       }, error: function(xhr) {
         console.log("You messed up.");
       }
     });
-
+  },
+  handleFollow: function(userToFollow) {
+    $.ajax({
+      url: 'https://api.github.com/user/following/' + userToFollow.login,
+      type: "PUT",
+      headers: {"Authorization": "token " + this.props.currentUser.token},
+      success: function(response) {
+        console.log("Yes");
+      }, error: function(xhr) {
+        console.log("You messed up")
+      }
+    });
   },
   render: function() {
     var Content;
 
     switch (this.state.activeButton) {
       case 'followers':
-        Content = <Followers key='followers' users={this.props.followers} />
+        Content = <Followers key='followers' users={ this.props.followers } />
         break;
       case 'following':
-        Content = <Following following={this.props.following} onUnfollow={this.handleUnfollow} />
+        Content = <Following following={ this.props.following } onUnfollow={ this.handleUnfollow } />
         break;
       case 'feed':
-        Content = <Feed feed={this.props.feed} />
+        Content = <Feed feed={ this.props.feed } />
         break;
       case 'search':
-        Content = <Search searchValue={this.props.searchValue} />
+        Content = <Search searchValue={ this.props.searchValue } currentUser={ this.props.currentUser } onFollow={ this.handleFollow } />
         break;
     }
 
@@ -170,7 +178,7 @@ var UsersBar = React.createClass ({
           <button
             type='button'
             className='btn btn-primary'
-            onClick={ this.handleButtonClick.bind(this, button.identifier) }>{button.name}
+            onClick={ this.handleButtonClick.bind(this, button.identifier) }>{ button.name }
           </button>
         </div>
       );
@@ -263,7 +271,7 @@ var Following = React.createClass ({
     var following = this.props.following
 
     var users = following.map(function(user, index) {
-      return (<FollowingTableRow user={user} key={index} onUnfollow={this.props.onUnfollow} />);
+      return (<FollowingTableRow user={user} key={index} onUnfollow={ this.props.onUnfollow } />);
     }.bind(this));
     return (
       <div className='follow-table'>
@@ -293,14 +301,14 @@ var FollowingTableRow = React.createClass ({
       >
         <img
           className='img-circle img-responsive img-center'
-          src={this.props.user.avatar_url.slice(0, -4)} />
+          src={ this.props.user.avatar_url.slice(0, -4) } />
 
         <h3>
           <a href={ this.props.user.html_url } >{ this.props.user.login }</a><br />
             <small>
             <a
               className="unfollow"
-              onClick={this.handleUnfollow}
+              onClick={ this.handleUnfollow }
             >
             { this.state.followLink }
             </a>
@@ -352,30 +360,31 @@ var Search = React.createClass ({
   },
   handleSearch: function(e) {
     e.preventDefault();
+    var component = this;
     var searchValue = (React.findDOMNode(this.refs.searchValue).value.trim());
-    this.renderUser(searchValue);
-    // render the user below
 
-    // click "follow"
-        // send up to parent, ajax to follow
-        // change onclick to "Followed"
-
+    var response = $.ajax({
+      url: 'https://api.github.com/users/' + searchValue,
+      type: "GET",
+      headers: {"Authorization": "token " + this.props.currentUser.token},
+      success: function(response) {
+        this.renderUser(response);
+      }.bind(this), error: function(xhr) {
+        console.log("You messed up.");
+      }
+    });
   },
   renderUser: function(value) {
-    console.log("HLL");
-    var userBox = <UserBox user={value} />
+    var userBox = <UserBox user={value} onFollow={ this.props.onFollow } />
     this.setState({ userRendering: userBox })
   },
   render: function() {
-
-
-    var Content = "";
     return (
       <div>
         <form>
           <div className="form-group dropdown-toggle">
             <input type="text" ref="searchValue" placeholder="Search for a user..." id="searchfield" />
-            <button name="button" onClick={this.handleSearch} className="btn btn-primary">Search</button>
+            <button name="button" onClick={ this.handleSearch } className="btn btn-primary">Search</button>
           </div>
         </form>
 
@@ -388,11 +397,36 @@ var Search = React.createClass ({
 });
 
 var UserBox = React.createClass ({
+  getInitialState: function() {
+    return ({ followLink: 'Follow' })
+  },
+  handleFollow: function() {
+    followed = "Followed";
+    this.setState({ followLink: followed });
+
+    this.props.onFollow(this.props.user)
+  },
   render: function() {
     return (
-      <div>
-        // render user like it is in following/followers
-        // add button, on click takes you to an ajax
+      <div
+        className='col-lg-4 col-sm-6 text-center'
+        key={ 'user-' + this.props.user.login }
+      >
+        <img
+          className='img-circle img-responsive img-center'
+          src={ this.props.user.avatar_url.slice(0, -4) } />
+
+        <h3>
+          <a href={ this.props.user.html_url } >{ this.props.user.login }</a><br />
+            <small>
+            <a
+              className="follow"
+              onClick={ this.handleFollow }
+            >
+            { this.state.followLink }
+            </a>
+          </small>
+        </h3>
       </div>
     );
   }
@@ -499,7 +533,7 @@ var CommitStatsTable = React.createClass ({
           className='dataRow'
           >
           <td>
-            {row.name} <span className='badge pull-right'>{row.data}</span>
+            { row.name } <span className='badge pull-right'>{ row.data }</span>
           </td>
         </tr>
       );
