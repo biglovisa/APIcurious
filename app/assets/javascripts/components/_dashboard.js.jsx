@@ -278,8 +278,13 @@ var FollowingTableRow = React.createClass ({
     return { followLink: 'Unfollow' }
   },
   handleUnfollow: function() {
+    unfollowed = "Unfollowed";
+
+    this.setState({ followLink: unfollowed })
+
     this.props.onUnfollow(this.props.user)
   },
+
   render: function() {
     return (
       <div
@@ -297,12 +302,12 @@ var FollowingTableRow = React.createClass ({
               className="unfollow"
               onClick={this.handleUnfollow}
             >
-              Unfollow
+            { this.state.followLink }
             </a>
           </small>
         </h3>
       </div>
-    )
+    );
   }
 });
 
