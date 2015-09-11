@@ -62,4 +62,8 @@ class User < ActiveRecord::Base
   def organizations
     service.find_user_organizations(self)
   end
+
+  def recent_events
+    service.find_received_events(self)
+  end
 end

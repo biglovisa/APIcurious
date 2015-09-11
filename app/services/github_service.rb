@@ -33,9 +33,19 @@ class GithubService
     parse(client.get("users/#{user.nickname}/orgs").body)
   end
 
+  def find_received_events(user)
+    events = parse(client.get("/users/#{user.nickname}/received_events").body)
+    format_events(events)
+  end
+
   private
 
   def parse(response)
     JSON.parse(response, symbolize_names: true)
+  end
+
+  def format_events(events)
+    filter_events = events.select { |event| event[:type] == "CreateEvent" }
+    filter_events.map { |event| [event[:repo][:url], event[:actor][:login], event[:repo][:name]] }
   end
 end
