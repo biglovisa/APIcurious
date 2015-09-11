@@ -137,7 +137,7 @@ var UsersBar = React.createClass ({
         Content = <Feed feed={this.props.feed} />
         break;
       case 'search':
-        Content = <Search />
+        Content = <Search searchValue={this.props.searchValue} />
         break;
     }
 
@@ -315,9 +315,10 @@ var Feed = React.createClass ({
   render: function() {
     rows = this.props.feed.map(function(activity, index) {
       return (
-        <tr>
+        <tr
+          key={ index }
+        >
           <td
-            key={ index }
             className='dataRow'
           >
 
@@ -346,14 +347,53 @@ var Feed = React.createClass ({
 });
 
 var Search = React.createClass ({
+  getInitialState: function() {
+    return { userRendering: "" }
+  },
+  handleSearch: function(e) {
+    e.preventDefault();
+    var searchValue = (React.findDOMNode(this.refs.searchValue).value.trim());
+    this.renderUser(searchValue);
+    // render the user below
+
+    // click "follow"
+        // send up to parent, ajax to follow
+        // change onclick to "Followed"
+
+  },
+  renderUser: function(value) {
+    console.log("HLL");
+    var userBox = <UserBox user={value} />
+    this.setState({ userRendering: userBox })
+  },
+  render: function() {
+
+
+    var Content = "";
+    return (
+      <div>
+        <form>
+          <div className="form-group dropdown-toggle">
+            <input type="text" ref="searchValue" placeholder="Search for a user..." id="searchfield" />
+            <button name="button" onClick={this.handleSearch} className="btn btn-primary">Search</button>
+          </div>
+        </form>
+
+        <div className="user">
+          { this.state.userRendering }
+        </div>
+      </div>
+    );
+  }
+});
+
+var UserBox = React.createClass ({
   render: function() {
     return (
-      <form action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" /><br />
-        <div class="form-group dropdown-toggle">
-          <input type="search" name="searchfield" id="searchfield" />
-          <button name="button" type="submit" method="get" class="btn btn-primary">Search</button><br />
-        </div>
-      </form>
+      <div>
+        // render user like it is in following/followers
+        // add button, on click takes you to an ajax
+      </div>
     );
   }
 });
