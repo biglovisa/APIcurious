@@ -6,16 +6,10 @@ var Dashboard = React.createClass ({
     return (
       <div>
         <div className='col-lg-6'>
-          <StatsBar key='statsbar'
-                    starredRepos={ this.props.data.starredRepos }
-                    organizations={this.props.data.organizations}
-                    repositories={this.props.data.repositories}
-                    commitHistory={this.props.data.commit_history} />
+          <StatsBar key='statsbar' starredRepos={ this.props.data.starredRepos } organizations={this.props.data.organizations} repositories={this.props.data.repositories} commitHistory={this.props.data.commit_history} />
         </div>
         <div className='col-lg-6'>
-          <UsersBar key='usersbar'
-                    following={ this.props.data.users }
-                    followers={ this.props.data.users.followers } />
+          <UsersBar key='usersbar' following={ this.props.data.users } followers={ this.props.data.users.followers } />
         </div>
       </div>
     );
@@ -49,19 +43,19 @@ var StatsBar = React.createClass ({
 
     var BUTTONS = [
       {
-        key: 'starredRepos',
+        identifier: 'starredRepos',
         name: 'Starred Repos'
       },
       {
-        key: 'repositories',
+        identifier: 'repositories',
         name: 'Repositories'
       },
       {
-        key: 'commits',
+        identifier: 'commits',
         name: 'Commit History'
       },
       {
-        key: 'organizations',
+        identifier: 'organizations',
         name: 'Organizations'
       }
     ];
@@ -71,12 +65,12 @@ var StatsBar = React.createClass ({
         <div
           className='btn-group'
           role='group'
+          key={index}
         >
           <button
             type='button'
             className='btn btn-primary'
-            key={ index }
-            onClick={ this.handleButtonClick.bind(this, button.key) }>{button.name}</button>
+            onClick={this.handleButtonClick.bind(this, button.identifier) }>{button.name}</button>
         </div>
       );
     }.bind(this));
@@ -102,25 +96,28 @@ var UsersBar = React.createClass ({
   handleButtonClick: function(clicked) {
     this.setState({activeButton: clicked});
   },
+  handleUnfollow: function(id) {
+    console.log("unfollow in users bar");
+  },
   render: function() {
     var Content;
 
     switch (this.state.activeButton) {
       case 'followers':
-        Content = <UserDisplay key='followers' users={this.props.followers} />
+        Content = <Followers key='followers' users={this.props.followers} />
         break;
       case 'following':
-        Content = <UserDisplayFollowing key='following' users={this.props.following} />
+        Content = <Following users={this.props.following} />
         break;
     }
 
     var BUTTONS = [
       {
-        key: 'followers',
+        identifier: 'followers',
         name: 'Followers'
       },
       {
-        key: 'following',
+        identifier: 'following',
         name: 'Following'
       }
     ]
@@ -130,12 +127,12 @@ var UsersBar = React.createClass ({
         <div
           className='btn-group'
           role='group'
+          key={ button.name }
         >
           <button
             type='button'
             className='btn btn-primary'
-            key={ button.name }
-            onClick={ this.handleButtonClick.bind(this, button.key) }>{button.name}</button>
+            onClick={ this.handleButtonClick.bind(this, button.identifier) }>{button.name}</button>
         </div>
       );
     }.bind(this));
@@ -189,7 +186,7 @@ var StarredReposTable = React.createClass ({
   }
 });
 
-UserDisplay = React.createClass ({
+Followers = React.createClass ({
   getDefaultProps: function() {
     return { users: [] }
   },
@@ -219,7 +216,7 @@ UserDisplay = React.createClass ({
   }
 });
 
-var UserDisplayFollowing = React.createClass ({
+var Following = React.createClass ({
  getDefaultProps: function() {
     return { users: [] }
   },
@@ -228,7 +225,6 @@ var UserDisplayFollowing = React.createClass ({
   },
   render: function() {
     var following = this.props.users.following
-    var followers = this.props.users.followers
 
     var users = following.map(function(user, index) {
       return (
@@ -244,8 +240,8 @@ var UserDisplayFollowing = React.createClass ({
             <a href={ user.html_url } >{ user.login }</a><br />
               <small>
                 <button
-                  type="button"
-                  className="btn btn-danger"
+                  type='button'
+                  className='btn btn-danger'
                   onClick={this.handleUnfollow}
                 >
                 Delete
@@ -360,11 +356,11 @@ var CommitStatsTable = React.createClass ({
 
     var rows = NAMES.map(function(row, index) {
       return (
-        <tr>
-          <td
-            key={row.id}
-            className='dataRow'
+        <tr
+          key={index}
+          className='dataRow'
           >
+          <td>
             {row.name} <span className='badge pull-right'>{row.data}</span>
           </td>
         </tr>
