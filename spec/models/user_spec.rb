@@ -27,7 +27,7 @@ RSpec.describe "the User model", type: :model do
     end
 
     it "has a token" do
-      expect(user.token).to eq "809aaf5c01218fa70d7b118590afa975ddc125cf"
+      expect(user.token.nil?).to eq false
     end
   end
 
@@ -49,14 +49,14 @@ RSpec.describe "the User model", type: :model do
     it "returns a user's followers" do
       VCR.use_cassette("user_followers") do
         followers = user.followers
-        expect(followers.count).to eq 23
+        expect(followers.count).to eq 25
       end
     end
 
     it "returns the users the user is following" do
       VCR.use_cassette("following") do
         following = user.following
-        expect(following.count).to eq 25
+        expect(following.count).to eq 27
       end
     end
 

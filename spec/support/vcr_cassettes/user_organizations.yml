@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.github.com/users/applegrain/orgs?access_token=809aaf5c01218fa70d7b118590afa975ddc125cf
+    uri: https://api.github.com/users/applegrain/orgs?access_token=9705cbe03d8f6a6c799d283776e1a34310f180ee
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Thu, 10 Sep 2015 17:56:48 GMT
+      - Sun, 13 Sep 2015 14:21:14 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -31,15 +31,15 @@ http_interactions:
       X-Ratelimit-Limit:
       - '5000'
       X-Ratelimit-Remaining:
-      - '4995'
+      - '4939'
       X-Ratelimit-Reset:
-      - '1441911407'
+      - '1442154577'
       Cache-Control:
       - private, max-age=60, s-maxage=60
       Etag:
       - W/"4f8ef8fee58340cab4a271a0beb8f4b9"
       X-Oauth-Scopes:
-      - ''
+      - user:email, user:follow
       X-Accepted-Oauth-Scopes:
       - admin:org, read:org, repo, user, write:org
       X-Oauth-Client-Id:
@@ -63,16 +63,16 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       X-Github-Request-Id:
-      - 4999852B:13215:49433DD:55F1C460
+      - 49B51267:ED5D:D72F4C:55F5865A
       Strict-Transport-Security:
       - max-age=31536000; includeSubdomains; preload
       X-Content-Type-Options:
       - nosniff
       X-Served-By:
-      - dc1ce2bfb41810a06c705e83b388572d
+      - 5aeb3f30c9e3ef6ef7bcbcddfd9a68f7
     body:
       encoding: ASCII-8BIT
       string: '[{"login":"turingschool","id":7934292,"url":"https://api.github.com/orgs/turingschool","repos_url":"https://api.github.com/orgs/turingschool/repos","events_url":"https://api.github.com/orgs/turingschool/events","members_url":"https://api.github.com/orgs/turingschool/members{/member}","public_members_url":"https://api.github.com/orgs/turingschool/public_members{/member}","avatar_url":"https://avatars.githubusercontent.com/u/7934292?v=3","description":""}]'
     http_version: 
-  recorded_at: Thu, 10 Sep 2015 17:56:48 GMT
+  recorded_at: Sun, 13 Sep 2015 14:21:14 GMT
 recorded_with: VCR 2.9.3
