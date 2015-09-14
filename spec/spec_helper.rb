@@ -33,7 +33,7 @@ RSpec.configure do |config|
                           email: 'example@email.com',
                           nickname: 'applegrain',
                           image_url: 'http://36.media.tumblr.com/tumblr_lqeoxdzT3M1r27575o1_500.jpg',
-                          token: '9705cbe03d8f6a6c799d283776e1a34310f180ee')
+                          token: 'abcdef')
   end
 
   def login_user
