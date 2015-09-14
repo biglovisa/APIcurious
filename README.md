@@ -9,6 +9,12 @@ This is the first individual project of Module 3 at the Turing School. Students 
 use an API, in this case GitHub, to build a clone of said platform. The backend is Rails and
 the frontend is built using React.js.
 
+###### instructions
+* clone the project: `git clone git@github.com:applegrain/APIcurious.git`
+* bundle 
+* run the migrations with `rake db:migrate`
+* run on `localhost:9292` or start the server with `puma`
+
 #### Learning Goals
 
 * Learn to consume data from third-party APIs
