@@ -9,11 +9,23 @@
 
 var Dashboard = React.createClass ({
   getInitialState: function() {
-    data = window.data
+    var data = window.data
+    window.data = null;
     data.following = data.users.following
     data.followers = data.users.followers
 
     return data
+  },
+  updateDashboardFollowing: function(userToUnfollow){
+    var newArray = this.state.following.filter(function(user) {
+      return user.login !== userToUnfollow.login
+    });
+
+    this.setState({following: newArray})
+  },
+  addDashboardFollower: function(userToFollow) {
+    var newArray = this.state.following.concat(userToFollow);
+    this.setState({following: newArray})
   },
   render: function() {
     return (
@@ -27,10 +39,13 @@ var Dashboard = React.createClass ({
         </div>
         <div className='col-lg-6'>
           <UsersBar key='usersbar'
+                    removeDashboardFollower={this.updateDashboardFollowing}
+                    addDashboardFollower={this.addDashboardFollower}
                     following=  { this.state.following }
                     followers=  { this.state.followers }
                     feed=       { this.state.received_events }
-                    currentUser={ this.state.user } />
+                    currentUser={ this.state.user }
+                     />
         </div>
       </div>
     );

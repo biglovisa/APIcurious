@@ -7,7 +7,7 @@ var Search = React.createClass ({
     var component = this;
     var searchValue = (React.findDOMNode(this.refs.searchValue).value.trim());
 
-    var response = $.ajax({
+    $.ajax({
       url: 'https://api.github.com/users/' + searchValue,
       type: "GET",
       headers: {"Authorization": "token " + this.props.currentUser.token},

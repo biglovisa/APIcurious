@@ -1,23 +1,29 @@
 var UsersBar = React.createClass ({
+  propTypes: {
+    currentUser: React.PropTypes.object.isRequired,
+    removeDashboardFollower: React.PropTypes.func.isRequired
+  },
   getInitialState: function() {
-    return { activeButton: 'following', following: this.props.following }
+    return {
+      activeButton: 'following',
+      following: this.props.following
+    }
   },
   handleButtonClick: function(clicked) {
     this.setState({ activeButton: clicked });
   },
+  handleUnfollowError: function(error) {
+    debugger
+  },
   handleUnfollow: function(userToUnfollow) {
-    var following = this.state.following;
-
     $.ajax({
       url: 'https://api.github.com/user/following/' + userToUnfollow.login,
       type: "DELETE",
       headers: {"Authorization": "token " + this.props.currentUser.token},
-      success: function(response) {
-        // TODO: refresh child with updated list of following
-
-      }, error: function(xhr) {
-        console.log("You messed up.");
-      }
+      success: function(){
+        this.props.removeDashboardFollower(userToUnfollow)
+      }.bind(this),
+      error: this.handleUnfollowError
     });
   },
   handleFollow: function(userToFollow) {
@@ -26,11 +32,10 @@ var UsersBar = React.createClass ({
       type: "PUT",
       headers: {"Authorization": "token " + this.props.currentUser.token},
       success: function(response) {
-        // TODO: refresh child with updatedlist
-        var updatedlist = this.state.following.push(userToFollow);
-        this.setState({ following: updatedlist })
-
-      }.bind(this), error: function(xhr) {
+        this.props.addDashboardFollower(userToFollow)
+        this.setState({activeButton: "following"});
+      }.bind(this),
+      error: function(xhr) {
         console.log("You messed up")
       }
     });
@@ -43,7 +48,7 @@ var UsersBar = React.createClass ({
         Content = <Followers key='followers' users={ this.props.followers } />
         break;
       case 'following':
-        Content = <Following following={ this.state.following } onUnfollow={ this.handleUnfollow } />
+        Content = <Following following={ this.props.following } onUnfollow={ this.handleUnfollow } />
         break;
       case 'feed':
         Content = <Feed feed={ this.props.feed } />
